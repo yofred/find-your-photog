@@ -1,0 +1,53 @@
+<%= form_for(@preference) do |f| %>
+  <% if @preference.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@preference.errors.count, "error") %> prohibited this preference from being saved:</h2>
+
+      <ul>
+      <% @preference.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :traditional %><br />
+    <%= f.check_box :traditional %>
+  </div>
+  <div class="field">
+    <%= f.label :contemporary %><br />
+    <%= f.check_box :contemporary %>
+  </div>
+  <div class="field">
+    <%= f.label :documentary %><br />
+    <%= f.check_box :documentary %>
+  </div>
+  <div class="field">
+    <%= f.label :artistic %><br />
+    <%= f.check_box :artistic %>
+  </div>
+  <div class="field">
+    <%= f.label :conceptual %><br />
+    <%= f.check_box :conceptual %>
+  </div>
+  <div class="field">
+    <%= f.label :glamorous %><br />
+    <%= f.check_box :glamorous %>
+  </div>
+  <div class="field">
+    <%= f.label :retro %><br />
+    <%= f.check_box :retro %>
+  </div>
+  <div class="field">
+    <%= f.label :fine_art %><br />
+    <%= f.check_box :fine_art %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

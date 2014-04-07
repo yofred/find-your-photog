@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  traditional: false
+  contemporary: false
+  documentary: false
+  artistic: false
+  conceptual: false
+  glamorous: false
+  retro: false
+  fine_art: false
+
+two:
+  user_id: 1
+  traditional: false
+  contemporary: false
+  documentary: false
+  artistic: false
+  conceptual: false
+  glamorous: false
+  retro: false
+  fine_art: false

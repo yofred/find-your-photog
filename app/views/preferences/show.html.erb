@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @preference.user_id %>
+</p>
+
+<p>
+  <b>Traditional:</b>
+  <%= @preference.traditional %>
+</p>
+
+<p>
+  <b>Contemporary:</b>
+  <%= @preference.contemporary %>
+</p>
+
+<p>
+  <b>Documentary:</b>
+  <%= @preference.documentary %>
+</p>
+
+<p>
+  <b>Artistic:</b>
+  <%= @preference.artistic %>
+</p>
+
+<p>
+  <b>Conceptual:</b>
+  <%= @preference.conceptual %>
+</p>
+
+<p>
+  <b>Glamorous:</b>
+  <%= @preference.glamorous %>
+</p>
+
+<p>
+  <b>Retro:</b>
+  <%= @preference.retro %>
+</p>
+
+<p>
+  <b>Fine art:</b>
+  <%= @preference.fine_art %>
+</p>
+
+
+<%= link_to 'Edit', edit_preference_path(@preference) %> |
+<%= link_to 'Back', preferences_path %>
