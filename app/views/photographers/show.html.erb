@@ -1,13 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>First name:</b>
-  <%= @photographer.fname %>
-</p>
-
-<p>
-  <b>Last name:</b>
-  <%= @photographer.lname %>
+  <b>Name:</b>
+  <%= @photographer.full_name %>
 </p>
 
 <p>
@@ -25,12 +20,13 @@
   <%= @photographer.website %>
 </p>
 
-
 <p>
   <b>Bio:</b>
   <%= @photographer.bio %>
 </p>
 
+<% if current_user != nil && @photographer.id == current_user.id && current_user.class == Photographer %>
+  <%= link_to 'New Gallery', new_gallery_path %> |
+  <%= link_to 'Edit Profile', edit_photographer_path(@photographer) %> 
+<% end %>
 
-<%= link_to 'Edit', edit_photographer_path(@photographer) %> |
-<%= link_to 'Back', photographers_path %>

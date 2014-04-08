@@ -10,11 +10,6 @@
 </p>
 
 <p>
-  <b>Comment:</b>
-  <%= @user.comment_id %>
-</p>
-
-<p>
   <b>Style:</b>
   <%= @user.style_id %>
 </p>
@@ -29,6 +24,6 @@
   <%= @user.bio %>
 </p>
 
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<% if current_user != nil && @user.id == current_user.id && current_user.class == User %>
+  <%= link_to 'Edit Profile', edit_user_path(@user) %> 
+<% end %>
