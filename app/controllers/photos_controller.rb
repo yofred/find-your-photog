@@ -1,6 +1,5 @@
 class PhotosController < ApplicationController
-  # GET /photos
-  # GET /photos.json
+
   def index
     @photos = Photo.all
 
@@ -10,8 +9,6 @@ class PhotosController < ApplicationController
     end
   end
 
-  # GET /photos/1
-  # GET /photos/1.json
   def show
     @photo = Photo.find(params[:id])
 
@@ -21,8 +18,6 @@ class PhotosController < ApplicationController
     end
   end
 
-  # GET /photos/new
-  # GET /photos/new.json
   def new
     @photo = Photo.new
 
@@ -32,13 +27,10 @@ class PhotosController < ApplicationController
     end
   end
 
-  # GET /photos/1/edit
   def edit
     @photo = Photo.find(params[:id])
   end
 
-  # POST /photos
-  # POST /photos.json
   def create
     @photo = Photo.new(params[:photo])
 
@@ -53,8 +45,6 @@ class PhotosController < ApplicationController
     end
   end
 
-  # PUT /photos/1
-  # PUT /photos/1.json
   def update
     @photo = Photo.find(params[:id])
 

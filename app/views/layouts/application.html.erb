@@ -1,14 +1,38 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Findyourweddingphotographer</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+	<head>
+		<title>Find your wedding photographer!</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+	</head>
+	<body>
+		<div class="container">
+			<div class="cbp-af-header">
+				<div class="cbp-af-inner">
+					<h1><%= link_to("COOL LOGO", :root) %></h1>
+					<nav>
+						<a href="<%= photographers_path %>">photographers</a>
+						<a href="#">galleries</a>
+						<a href="#">top</a>
+						<a href="#">logout</a>
+					</nav>
+				</div>
+			</div>
+
+			<header class="clearfix">
+				
+			</header>	
+			<div class="main">
+			
+      <section>
+      <div>
+
 
 <%= yield %>
 
-</body>
+
+      </div>
+      </section>
+		  </div>
+	</body>
 </html>

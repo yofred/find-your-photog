@@ -1,6 +1,5 @@
 class PhotographersController < ApplicationController
-  # GET /photographers
-  # GET /photographers.json
+
   def index
     @photographers = Photographer.all
 
@@ -10,8 +9,6 @@ class PhotographersController < ApplicationController
     end
   end
 
-  # GET /photographers/1
-  # GET /photographers/1.json
   def show
     @photographer = Photographer.find(params[:id])
 
@@ -21,8 +18,7 @@ class PhotographersController < ApplicationController
     end
   end
 
-  # GET /photographers/new
-  # GET /photographers/new.json
+
   def new
     @photographer = Photographer.new
 
@@ -32,13 +28,10 @@ class PhotographersController < ApplicationController
     end
   end
 
-  # GET /photographers/1/edit
   def edit
     @photographer = Photographer.find(params[:id])
   end
 
-  # POST /photographers
-  # POST /photographers.json
   def create
     @photographer = Photographer.new(params[:photographer])
 
@@ -53,8 +46,6 @@ class PhotographersController < ApplicationController
     end
   end
 
-  # PUT /photographers/1
-  # PUT /photographers/1.json
   def update
     @photographer = Photographer.find(params[:id])
 
@@ -69,8 +60,6 @@ class PhotographersController < ApplicationController
     end
   end
 
-  # DELETE /photographers/1
-  # DELETE /photographers/1.json
   def destroy
     @photographer = Photographer.find(params[:id])
     @photographer.destroy

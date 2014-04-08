@@ -1,23 +1,12 @@
 Findyourweddingphotographer::Application.routes.draw do
   resources :users
-
-
   resources :preferences
-
-
   resources :photographers
-
-
   resources :styles
-
-
   resources :comments
-
-
   resources :galleries
-
-
   resources :photos
+  root :to => 'pages#index'
 
 
   # The priority is based upon order of creation:
