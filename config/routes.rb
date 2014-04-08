@@ -9,7 +9,7 @@ Findyourweddingphotographer::Application.routes.draw do
   root :to => 'pages#index'
   
   get "/login" => 'pages#login', :as => :login
-  post "/login" => 'pages#create', :as => :logged
+  post "/login" => 'pages#create'
   delete "/login" => 'pages#logout', :as => :logout
 
 
