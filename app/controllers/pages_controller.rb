@@ -7,13 +7,15 @@ class PagesController < ApplicationController
     client.consumer_secret = ENV["500PX_CONSUMER_SECRET"]
     
     @catpic = "http://placekitten.com/250/250"
-    @photo = client.get('photos')
-    
+    @largecatpic = "http://placekitten.com/500/500"
+    # @photo = client.get('photos')
     
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @index }
     end
   end
+  
+  
   
 end

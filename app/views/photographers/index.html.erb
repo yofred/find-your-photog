@@ -1,41 +1,9 @@
 <h1>Listing photographers</h1>
 
-<table>
-  <tr>
-    <th>Fname</th>
-    <th>Lname</th>
-    <th>Email</th>
-    <th>Password digest</th>
-    <th>Company name</th>
-    <th>Website</th>
-    <th>Comment</th>
-    <th>Bio</th>
-    <th>Gallery</th>
-    <th>Style</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
 <% @photographers.each do |photographer| %>
-  <tr>
-    <td><%= photographer.fname %></td>
-    <td><%= photographer.lname %></td>
-    <td><%= photographer.email %></td>
-    <td><%= photographer.password_digest %></td>
-    <td><%= photographer.company_name %></td>
-    <td><%= photographer.website %></td>
-    <td><%= photographer.comment_id %></td>
-    <td><%= photographer.bio %></td>
-    <td><%= photographer.gallery_id %></td>
-    <td><%= photographer.style_id %></td>
-    <td><%= link_to 'Show', photographer %></td>
-    <td><%= link_to 'Edit', edit_photographer_path(photographer) %></td>
-    <td><%= link_to 'Destroy', photographer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+  <ul>
+    <li><%= link_to photographer.full_name_and_company_name, photographer %></li>
+  </ul>
 <% end %>
-</table>
 
-<br />
-
-<%= link_to 'New Photographer', new_photographer_path %>
+<%= link_to 'Create new photographer account', new_photographer_path %>

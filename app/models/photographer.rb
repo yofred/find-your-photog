@@ -6,6 +6,14 @@ class Photographer < ActiveRecord::Base
   validates :fname, :lname, :email, :company_name, :presence => true
   validates :email, :uniqueness => true
   
+  def full_name
+    "#{self.fname.downcase.titleize} #{self.lname.downcase.titleize}"
+  end
+  
+  def full_name_and_company_name
+    "#{self.fname.downcase.titleize} #{self.lname.downcase.titleize} of #{self.company_name} "
+  end
+  
   has_many :photos
   has_many :comments
 end

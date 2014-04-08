@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <%= @user.handle %>'s page
+</p>
+
+<p>
   <b>Gallery:</b>
   <%= @user.gallery_id %>
 </p>
@@ -16,28 +20,8 @@
 </p>
 
 <p>
-  <b>Fname:</b>
-  <%= @user.fname %>
-</p>
-
-<p>
-  <b>Lname:</b>
-  <%= @user.lname %>
-</p>
-
-<p>
   <b>Email:</b>
   <%= @user.email %>
-</p>
-
-<p>
-  <b>Password digest:</b>
-  <%= @user.password_digest %>
-</p>
-
-<p>
-  <b>Handle:</b>
-  <%= @user.handle %>
 </p>
 
 <p>

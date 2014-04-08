@@ -24,8 +24,12 @@
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :password_digest %><br />
-    <%= f.text_field :password_digest %>
+    <%= f.label :password %><br />
+    <%= f.text_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.text_field :password_confirmation %>
   </div>
   <div class="field">
     <%= f.label :company_name %><br />
@@ -36,20 +40,8 @@
     <%= f.text_field :website %>
   </div>
   <div class="field">
-    <%= f.label :comment_id %><br />
-    <%= f.number_field :comment_id %>
-  </div>
-  <div class="field">
     <%= f.label :bio %><br />
     <%= f.text_area :bio %>
-  </div>
-  <div class="field">
-    <%= f.label :gallery_id %><br />
-    <%= f.number_field :gallery_id %>
-  </div>
-  <div class="field">
-    <%= f.label :style_id %><br />
-    <%= f.number_field :style_id %>
   </div>
   <div class="actions">
     <%= f.submit %>
