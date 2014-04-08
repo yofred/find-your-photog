@@ -1,0 +1,9 @@
+<%= form_tag login_path do %>
+  
+<%= text_field_tag :email, nil, placeholder: "email", size: 27 %>
+<%= password_field_tag :password, nil, placeholder: "password", size: 27 %>
+<%= submit_tag "log in" %>
+<% end %>
+<br>            
+<%= link_to 'Create photographer account', new_photographer_path %>
+| <%= link_to 'Create user account', new_user_path %>

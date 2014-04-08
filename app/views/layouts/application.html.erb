@@ -14,7 +14,13 @@
 						<a href="<%= photographers_path %>">photographers</a>
             <a href="<%= users_path %>">users</a>
 						<a href="#">galleries</a>
-						<a href="#">logout</a>
+            <% if current_user %>
+              <%= link_to "me", user_path(current_user.id) %>
+              <%= link_to "log out", login_path, :method => :delete %>
+            <% else %>
+              <a href="<%= login_path %>">login</a>
+              <%= link_to "log in", login_path %>
+            <% end %>
 					</nav>
 				</div>
 			</div>

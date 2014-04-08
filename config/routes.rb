@@ -7,6 +7,10 @@ Findyourweddingphotographer::Application.routes.draw do
   resources :galleries
   resources :photos
   root :to => 'pages#index'
+  
+  get "/login" => 'pages#login', :as => :login
+  post "/login" => 'pages#create', :as => :logged
+  delete "/login" => 'pages#logout', :as => :logout
 
 
   # The priority is based upon order of creation:
