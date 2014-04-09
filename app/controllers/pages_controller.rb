@@ -27,8 +27,20 @@ class PagesController < ApplicationController
     end
   end
   
+  def create_photographer
+    photographer = Photographer.find_by_email(params[:email])
+    # debugger
+    if photographer && photographer.authenticate(params[:password])
+      session[:photographer_id] = photographer.id
+      redirect_to :root
+    else
+      redirect_to :photographer
+    end
+  end
+  
   def logout
     session[:user_id] = nil
+    session[:photographer_id] = nil
     redirect_to :root
   end
   

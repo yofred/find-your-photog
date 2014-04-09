@@ -8,8 +8,10 @@ Findyourweddingphotographer::Application.routes.draw do
   resources :photos
   root :to => 'pages#index'
   
-  get "/login" => 'pages#login', :as => :login
-  post "/login" => 'pages#create'
+  get "/login" => 'pages#login'
+  post "/login" => 'pages#create', :as => :login
+  post "/photo" => 'pages#create_photographer', :as => :photologin
+  
   delete "/login" => 'pages#logout', :as => :logout
 
 

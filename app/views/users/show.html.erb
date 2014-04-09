@@ -24,6 +24,6 @@
   <%= @user.bio %>
 </p>
 
-<% if current_user != nil && @user.id == current_user.id && current_user.class == User %>
+<% if current_user != nil && @user.id == current_user.id && current_user.class.name == "User" %>
   <%= link_to 'Edit Profile', edit_user_path(@user) %> 
 <% end %>

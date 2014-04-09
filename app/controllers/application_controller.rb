@@ -9,11 +9,18 @@ class ApplicationController < ActionController::Base
   
     # Return either `nil` or a User object.
     def current_user
-      if session[:user_id]
-        @current_user ||= User.find(session[:user_id])
+      if session[:user_id] 
+        @current_user = User.find(session[:user_id])
       end
     end
     helper_method :current_user
+        
+    def current_photographer
+      if session[:photographer_id]
+        @current_photographer = Photographer.find(session[:photographer_id])
+      end
+    end
+    helper_method :current_photographer
     
     def show_session_user
       puts "\n\n\n-------------- #{session[:user_id]} ------------\n\n\n"
