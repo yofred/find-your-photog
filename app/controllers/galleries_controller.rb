@@ -11,7 +11,8 @@ class GalleriesController < ApplicationController
 
   def show
     @gallery = Gallery.find(params[:id])
-
+    @photographer = Photographer.find(@gallery.photographer_id)
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @gallery }
@@ -33,9 +34,11 @@ class GalleriesController < ApplicationController
 
   def create
     @gallery = Gallery.new(params[:gallery])
+    
 
     respond_to do |format|
       if @gallery.save
+        @gallery.update_attributes(:photographer_id => current_photographer.id)
         format.html { redirect_to @gallery, notice: 'Gallery was successfully created.' }
         format.json { render json: @gallery, status: :created, location: @gallery }
       else

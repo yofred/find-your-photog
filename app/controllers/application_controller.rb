@@ -8,6 +8,9 @@ class ApplicationController < ActionController::Base
     # end
   
     # Return either `nil` or a User object.
+    
+
+    
     def current_user
       if session[:user_id] 
         @current_user = User.find(session[:user_id])

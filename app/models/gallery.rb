@@ -1,5 +1,5 @@
 class Gallery < ActiveRecord::Base
-  attr_accessible :photo_id, :title, :user_id
+  attr_accessible :photo_id, :title, :user_id, :photographer_id
   
   # validates :title, :presence => true
   has_many :photos

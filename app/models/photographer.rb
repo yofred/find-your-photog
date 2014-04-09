@@ -10,10 +10,11 @@ class Photographer < ActiveRecord::Base
   def full_name
     "#{self.fname.downcase.titleize} #{self.lname.downcase.titleize}"
   end
-  
+
   def full_name_and_company_name
     "#{self.fname.downcase.titleize} #{self.lname.downcase.titleize} of #{self.company_name} "
   end
+  
   
   has_many :photos
   has_many :comments

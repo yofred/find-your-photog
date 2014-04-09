@@ -10,20 +10,12 @@
       </ul>
     </div>
   <% end %>
-
+  
   <div class="field">
-    <%= f.label :photo_id %><br />
-    <%= f.number_field :photo_id %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.number_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <%= f.text_field :title, placeholder: "Name of Gallery", size: 27 %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
+  <br>
 <% end %>

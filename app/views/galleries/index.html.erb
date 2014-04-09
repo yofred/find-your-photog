@@ -1,24 +1,9 @@
 <h1>Listing galleries</h1>
 
-<table>
-  <tr>
-    <th>Photo</th>
-    <th>User</th>
-    <th>Title</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
 <% @galleries.each do |gallery| %>
-  <tr>
-    <td><%= gallery.photo_id %></td>
-    <td><%= gallery.user_id %></td>
-    <td><%= gallery.title %></td>
-    <td><%= link_to 'Show', gallery %></td>
-    <td><%= link_to 'Edit', edit_gallery_path(gallery) %></td>
-    <td><%= link_to 'Destroy', gallery, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+  <ul>
+    <li><%= link_to gallery.title, gallery %> by <%= Photographer.find(gallery.photographer_id).fname %></li>
+  </ul>
 <% end %>
 </table>
 
