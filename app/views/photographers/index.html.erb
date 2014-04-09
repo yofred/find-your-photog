@@ -2,11 +2,7 @@
 
 <% @photographers.each do |photographer| %>
   <ul>
-    <li><%= link_to photographer.full_name_and_company_name, photographer %>
-      <% if current_photographer.id == photographer.id %>
-        <span class="highlight_photographer">&nbsp;&nbsp; Me! &nbsp;&nbsp;</span>
-      <% end %>
-    </li>
+    <li><%= link_to photographer.full_name_and_company_name, photographer %></li>
   </ul>
 <% end %>
 

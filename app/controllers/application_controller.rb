@@ -1,17 +1,11 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
-  # def thumbnail(photo)
-  #   " #{photo.chomp!} + 3"
-  #   return photo
-  # end
-  # helper_method :thumbnail
-  
-    def authorize
-      if current_user.nil?
-        redirect_to :new_login
-      end
-    end
+    # def authorize
+    #   if current_user.nil?
+    #     redirect_to :new_login
+    #   end
+    # end
   
     # Return either `nil` or a User object.
     def current_user
@@ -27,10 +21,5 @@ class ApplicationController < ActionController::Base
       end
     end
     helper_method :current_photographer
-    
-    def show_session_user
-      puts "\n\n\n-------------- #{session[:user_id]} ------------\n\n\n"
-    end
-    
-    
+      
 end

@@ -18,7 +18,6 @@ class PhotographersController < ApplicationController
     end
   end
 
-
   def new
     @photographer = Photographer.new
 
@@ -37,7 +36,7 @@ class PhotographersController < ApplicationController
 
     respond_to do |format|
       if @photographer.save
-        session[:user_id] = @photographer.id
+        session[:photographer_id] = @photographer.id
         
         format.html { redirect_to @photographer, notice: 'Photographer was successfully created.' }
         format.json { render json: @photographer, status: :created, location: @photographer }

@@ -1,24 +1,7 @@
-<h1>Listing photos</h1>
-
-<table>
-  <tr>
-    <th>Gallery</th>
-    <th>Comment</th>
-    <th>Style</th>
-    <th>Photographer</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<h1>All user photos</h1>
 
 <% @photos.each do |photo| %>
-  <tr>
-    <td><%= photo.gallery_id %></td>
-    <td><%= photo.comment_id %></td>
-    <td><%= photo.style_id %></td>
-    <td><%= photo.photographer_id %></td>
     <td><%= link_to 'Show', photo %></td>
-    <td><%= link_to 'Edit', edit_photo_path(photo) %></td>
     <td><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>

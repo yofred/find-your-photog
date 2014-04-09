@@ -1,6 +1,9 @@
 class PhotosController < ApplicationController
 
   def index
+    
+    redirect_to :root
+    
     @photos = Photo.all
 
     respond_to do |format|

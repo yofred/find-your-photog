@@ -1,27 +1,11 @@
 class PagesController < ApplicationController
 
   def index
-    
-    # string = F00px.get('photos')
-    # parsed = JSON.parse(string.body)
-    # @photos = parsed["photos"]
-    
     string = F00px.get('photos')    
     path = JsonPath.new('$..image_url')
+    
     @photos = path.on(string.body)
-    
-    # <% @photos.each do |photo|%>
-    # <ul>
-    #   <li><%= photo %></li>
-    # </ul>
-    # <% end %>
-    
-    # @photos = F00px.get('photos')
-    # response = F00px.get('users/1')
-    
-    @catpic = "http://placekitten.com/250/250"
-    @largecatpic = "http://placekitten.com/500/500"
-    # @photo = client.get('photos')
+    @catpic = "http://placekitten.com/280/280"
     
     respond_to do |format|
       format.html # index.html.erb
@@ -47,7 +31,7 @@ class PagesController < ApplicationController
       session[:photographer_id] = photographer.id
       redirect_to :root
     else
-      redirect_to :photographer
+      redirect_to :root
     end
   end
   

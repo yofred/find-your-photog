@@ -10,8 +10,7 @@ Findyourweddingphotographer::Application.routes.draw do
   
   get "/login" => 'pages#login'
   post "/login" => 'pages#create', :as => :login
-  post "/photo" => 'pages#create_photographer', :as => :photologin
-  
+  post "/login" => 'pages#create_photographer', :as => :photologin
   delete "/login" => 'pages#logout', :as => :logout
 
 
