@@ -1,4 +1,12 @@
 .photographer_label {
-  color:lightgreen;
-  background-color:green;
+  color:lightgray;
+  background-color:gray;
+  font-family:helvetica;
+}
+
+.highlight_photographer {
+  font-weight:bold;
+  color:black;
+  background-color:yellow;
+  font-family:helvetica;
 }

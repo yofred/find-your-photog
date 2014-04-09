@@ -1,9 +1,13 @@
-<h1>Listing photographers</h1>
+<h1>Photographers</h1>
 
 <% @photographers.each do |photographer| %>
   <ul>
-    <li><%= link_to photographer.full_name_and_company_name, photographer %></li>
+    <li><%= link_to photographer.full_name_and_company_name, photographer %>
+      <% if current_photographer.id == photographer.id %>
+        <span class="highlight_photographer">&nbsp;&nbsp; Me! &nbsp;&nbsp;</span>
+      <% end %>
+    </li>
   </ul>
 <% end %>
 
-<%= link_to 'Create photographer account', new_photographer_path %>
+<%= link_to 'Create a photographer account!', new_photographer_path %>

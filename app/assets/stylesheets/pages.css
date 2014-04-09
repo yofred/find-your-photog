@@ -48,15 +48,15 @@
 
 /* header nav links! */
 .cbp-af-header nav a {
-	color: white;
+	color: lightgray;
 	font-weight: 700;
 	margin: 0 0 0 20px;
 	font-size: 1.4em;
 }
 
 .cbp-af-header nav a:hover {
-	color: gray;
-  background:white;
+	color:white;
+  background:gray;
 }
 
 /* Transitions and class for reduced height */
@@ -313,8 +313,9 @@ a:hover {
 
 .og-grid li {
 	display: inline-block;
-	margin: 10px 5px 0 5px;
+  margin: 10px 5px 0 5px;
 	vertical-align: top;
 	height: 250px;
+  width: 250px;
 }
 

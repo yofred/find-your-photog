@@ -2,9 +2,22 @@ class PagesController < ApplicationController
 
   def index
     
-    client = F00px::Client.new
-    client.consumer_key = ENV["500PX_CONSUMER_KEY"]
-    client.consumer_secret = ENV["500PX_CONSUMER_SECRET"]
+    # string = F00px.get('photos')
+    # parsed = JSON.parse(string.body)
+    # @photos = parsed["photos"]
+    
+    string = F00px.get('photos')    
+    path = JsonPath.new('$..image_url')
+    @photos = path.on(string.body)
+    
+    # <% @photos.each do |photo|%>
+    # <ul>
+    #   <li><%= photo %></li>
+    # </ul>
+    # <% end %>
+    
+    # @photos = F00px.get('photos')
+    # response = F00px.get('users/1')
     
     @catpic = "http://placekitten.com/250/250"
     @largecatpic = "http://placekitten.com/500/500"

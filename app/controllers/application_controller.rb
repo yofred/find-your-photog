@@ -1,6 +1,12 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
+  # def thumbnail(photo)
+  #   " #{photo.chomp!} + 3"
+  #   return photo
+  # end
+  # helper_method :thumbnail
+  
     def authorize
       if current_user.nil?
         redirect_to :new_login

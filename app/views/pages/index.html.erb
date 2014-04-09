@@ -6,6 +6,10 @@
   <body>                  
     <div class="container">
       <div class="main">
+      
+      <h3>Choose between users here and 500px</h3>
+      <!-- TODO javascript on and off switch here -->
+      
       <ul id="og-grid" class="og-grid">
           <li><%= link_to(image_tag(@catpic), root_path ) %></li>
           <li><%= link_to(image_tag(@catpic), root_path ) %></li>
@@ -23,6 +27,14 @@
           <li><%= link_to(image_tag(@catpic), root_path ) %></li>
           <li><%= link_to(image_tag(@catpic), root_path ) %></li>
           <li><%= link_to(image_tag(@catpic), root_path ) %></li>
+      </ul>
+      
+      <ul id="og-grid" class="og-grid">
+          <% @photos.each do |photo|%>
+          <li><%= link_to(image_tag(photo[0..-6]+'3.jpg'), root_path )%></li>  
+          <% end %>
+      </ul>
+      
     </div>
     </div>
   </body>

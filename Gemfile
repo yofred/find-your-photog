@@ -41,3 +41,6 @@ gem 'debugger'
 
 gem 'dotenv-rails', :groups => [:development, :test]
 
+gem 'json'
+
+gem 'jsonpath'
