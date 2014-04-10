@@ -14,6 +14,7 @@ class PhotosController < ApplicationController
 
   def show
     @photo = Photo.find(params[:id])
+    @photographer = Photographer.find(@photo.photographer_id)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -39,7 +40,8 @@ class PhotosController < ApplicationController
 
     respond_to do |format|
       if @photo.save
-        format.html { redirect_to @photo, notice: 'Photo was successfully created.' }
+        @photo.update_attributes(:photographer_id => current_photographer.id)
+        format.html { redirect_to @photo, notice: 'Photo was successfully uploaded!' }
         format.json { render json: @photo, status: :created, location: @photo }
       else
         format.html { render action: "new" }

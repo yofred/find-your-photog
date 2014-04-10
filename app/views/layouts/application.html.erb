@@ -14,7 +14,7 @@
 					<nav class="cl-effect-3">
 						<a href="<%= photographers_path %>">photographers</a>
             <a href="<%= users_path %>">users</a>
-						<a href="#">galleries</a>
+            <%= link_to "galleries", galleries_path %>
             <% if current_user %>
               <%= link_to "me", user_path(current_user.id) %>
               <%= link_to "log out", login_path, :method => :delete %>

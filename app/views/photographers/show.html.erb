@@ -26,6 +26,18 @@
   <%= @photographer.bio %>
 </p>
 
+<% if @photographer.photo_id != 0 %>
+    <p>Recently uploaded photos</p>
+  <% @photos.each do |photo| %>
+    <ul>
+      <li><%= image_tag(photo.photo.url) %></li>
+    </ul>
+  <% end %>
+  <p>View more photos from <%= @photographer.fname %>!</p>
+  <% else %>
+    <p><%= @photographer.fname %> has not posted any photos yet!</p>
+<% end %>
+
 <% if current_photographer != nil && @photographer.id == current_photographer.id %>
   <%= link_to 'New Gallery', new_gallery_path %> |
   <%= link_to 'Edit Profile', edit_photographer_path(@photographer) %> 

@@ -1,6 +1,6 @@
 class Photographer < ActiveRecord::Base
   has_secure_password
-  attr_accessible :bio, :comment_id, :company_name, :email, :gallery_id, :fname, :lname, :style_id, :password, :password_confirmation, :website
+  attr_accessible :bio, :comment_id, :company_name, :email, :gallery_id, :photo_id, :fname, :lname, :style_id, :password, :password_confirmation, :website
   
   
   # validations for photographer signup
@@ -15,7 +15,7 @@ class Photographer < ActiveRecord::Base
     "#{self.fname.downcase.titleize} #{self.lname.downcase.titleize} of #{self.company_name} "
   end
   
-  
+  has_many :galleries
   has_many :photos
   has_many :comments
 end

@@ -49,3 +49,4 @@ gem 'carrierwave'
 
 gem 'fog'
 
+gem 'mini_magick'
