@@ -1,14 +1,11 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  
-    # def authorize
-    #   if current_user.nil?
-    #     redirect_to :new_login
-    #   end
-    # end
-  
-    # Return either `nil` or a User object.
     
+    def authorize
+      if current_user.nil?
+        redirect_to :login
+      end
+    end
 
     
     def current_user

@@ -1,4 +1,5 @@
 class PhotographersController < ApplicationController
+  before_filter :authorize, :only => [:new, :edit, :create, :update, :destroy]
 
   def index
     @photographers = Photographer.all

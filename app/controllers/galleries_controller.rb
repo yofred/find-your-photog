@@ -1,4 +1,5 @@
 class GalleriesController < ApplicationController
+  before_filter :authorize, :only => [:new, :edit, :create, :update]
 
   def index
     @galleries = Gallery.all

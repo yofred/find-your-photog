@@ -1,5 +1,17 @@
 <p id="notice"><%= notice %></p>
 
+<% if @photos.size > 0 %>
+    <ul id="og-grid" class="og-grid">
+      <% @photos.each do |photo| %>
+      <li><%= link_to(image_tag(photo.photo.url(:thumb)), photo) %></li>
+      <% end %>
+    </ul>
+  
+  <%= link_to "View more photos from #{@photographer.fname}", galleries_path %>
+  <% else %>
+    <p><%= @photographer.fname %> has no photos.</p>
+<% end %>
+
 <p>
   <b>Name:</b>
   <%= @photographer.full_name %> 
@@ -28,30 +40,23 @@
 
 <p>
   <b>Galleries:</b>
+  
+  <% if @galleries.size > 0 %>
   <% @galleries.each do |gallery| %>
   <ul>
     <li><%= link_to gallery.title, gallery %></li>
   </ul>
   <% end %>
-</p>
-<p>
-<b>Recently uploaded photos:</b>
-</p>
-<% if @photographer.photo_id != 0 %>
-    
-  
-    <ul id="og-grid" class="og-grid">
-      <% @photos.each do |photo| %>
-      <li><%= link_to(image_tag(photo.photo.url(:thumb)), photo) %></li>
-      <% end %>
-    </ul>
-  
-  <p>View more photos from <%= @photographer.fname %>!</p>
   <% else %>
-    <p><%= @photographer.fname %> has not posted any photos yet!</p>
-<% end %>
+    <% if current_photographer != nil && @photographer.id == current_photographer.id %>
+      <%= link_to 'Create your first gallery!', new_gallery_path %> 
+    <% else %>
+      <%= @photographer.fname %> doesn't have any albums.
+    <% end %>
+  <% end %>
+</p>
 
-<% if current_photographer != nil && @photographer.id == current_photographer.id %>
+<% if current_photographer && @photographer.id == current_photographer.id %>
   <%= link_to 'New Gallery', new_gallery_path %> |
   <%= link_to 'Edit Profile', edit_photographer_path(@photographer) %> 
 <% end %>

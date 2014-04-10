@@ -2,7 +2,7 @@
 
 <% @galleries.each do |gallery| %>
   <ul>
-    <li><%= link_to gallery.title, gallery %> by <%= Photographer.find(gallery.photographer_id).fname %> <%= Photographer.find(gallery.photographer_id).lname %></li>
+    <li><%= link_to gallery.title, gallery %></li>
   </ul>
 <% end %>
 </table>

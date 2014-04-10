@@ -1,10 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to "Continue to your page", photographer_path(@photographer.id) %>
-<br>
+<%= link_to "Continue to your page", photographer_path(@photographer.id) %> |
+<%= link_to "Upload another photo", new_photo_path %> |
+<%= link_to 'Delete Photo', photo_path, method: :delete, data: { confirm: 'Are you sure?' } %> 
+<br></br>
 <div class="scale-with-grid">
 <%= image_tag(@photo.photo.url) %>
 </div>
-<br>
-<%= link_to 'Delete Photo', photo_path, method: :delete, data: { confirm: 'Are you sure?' } %> |
-<%= link_to 'Back', photos_path %>

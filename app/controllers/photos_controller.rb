@@ -1,4 +1,5 @@
 class PhotosController < ApplicationController
+  before_filter :authorize, :only => [:new, :edit, :create, :update, :destroy]
 
   def index
     
@@ -72,7 +73,7 @@ class PhotosController < ApplicationController
     @photo.destroy
 
     respond_to do |format|
-      format.html { redirect_to photos_url }
+      format.html { redirect_to :root }
       format.json { head :no_content }
     end
   end
