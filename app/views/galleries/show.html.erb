@@ -5,16 +5,7 @@
   by <%= @photographer.fname.titleize %> <%= @photographer.lname.titleize %>
 </p>
 
-<p>
-  
-</p>
-<p>
-  <b>Photo:</b>
-  <%= @gallery.photo_id %>
-</p>
-
-
-
+<%= link_to 'Add Photos to Gallery!', new_photo_path %> |
 <%= link_to 'Edit', edit_gallery_path(@gallery) %> |
 <%= link_to 'Back', galleries_path %> |
 <%= link_to 'Delete Album', gallery_path, method: :delete, data: { confirm: 'Are you sure?' } %>
