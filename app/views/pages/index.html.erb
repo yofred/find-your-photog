@@ -3,26 +3,26 @@
   <head>
     <title>Find your wedding photographer!</title>
   </head>
-  <body>                  
+  <body>
       
       <div class="filter_container">
-      <div class="filter">FindYourPhotog</div><div class="filter">500px</div>
-      <!-- TODO javascript on and off switch here -->
+        
+          <%= link_to "FindYourPhotog", :root, class: "filter", id: "findyourphotog", remote: true %>
+          <%= link_to "500px", :root, class: "filter", id: "f00px", remote: true %>
+        
       </div>
       
-      <ul id="og-grid" class="og-grid">
+      <ul id="og-grid" class="og-grid" id="findyourphotog" remote="true">
         <% @photos.each do |photo| %>
           <li><%= link_to(image_tag(photo.photo.url(:thumb)), photo) %></li>
         <% end %>
       </ul>
       
-      
-      <ul id="og-grid" class="og-grid">
+      <ul id="og-grid" class="og-grid" id="f00pix" remote="true">
           <% @f00_photos.each do |photo|%>
-          <li><%= link_to(image_tag(photo[0..-6]+'3.jpg'), root_path )%></li>  
+            <li><%= link_to(image_tag(photo[0..-6]+'3.jpg'), root_path )%></li>  
           <% end %>
-      </ul>
-      
+      </ul>      
 
   </body>
 </html>

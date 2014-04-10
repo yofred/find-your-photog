@@ -42,4 +42,11 @@ class PagesController < ApplicationController
     redirect_to :root
   end
   
+  # def render
+  #   respond_to do |format|
+  #     format.html # index.html.erb
+  #     format.json { render json: @index }
+  #   end
+  # end
+  
 end

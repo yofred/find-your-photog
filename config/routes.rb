@@ -12,6 +12,8 @@ Findyourweddingphotographer::Application.routes.draw do
   post "/login" => 'pages#create', :as => :login
   post "/pages" => 'pages#create_photographer', :as => :photologin
   delete "/login" => 'pages#logout', :as => :logout
+  
+  # get "/pages" => 'pages#render', :as => :render
 
 
   # The priority is based upon order of creation:
