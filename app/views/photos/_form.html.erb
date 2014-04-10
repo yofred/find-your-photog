@@ -10,10 +10,16 @@
       </ul>
     </div>
   <% end %>
-
+  
+  <div>
+    <p>
+      <b>Select Album:</b>
+      <%= select("photo", "gallery_id", @galleries.collect {|gallery| [ gallery.title, gallery.id ] }, { :include_blank => true }) %>
+    </p>
+  </div>
+  
   <div class="field">
     <p>
-      <%= f.label "Upload a photo to the album!" %><br />
       <%= f.file_field :photo %>
     </p>
   </div>

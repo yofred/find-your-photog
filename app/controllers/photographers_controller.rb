@@ -12,6 +12,7 @@ class PhotographersController < ApplicationController
   def show
     @photographer = Photographer.find(params[:id])
     @photos = Photo.where(:photographer_id => @photographer.id)
+    @galleries = Gallery.where(:photographer_id => @photographer.id)
     
     respond_to do |format|
       format.html # show.html.erb

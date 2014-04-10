@@ -1,3 +1,4 @@
+  
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -5,7 +6,18 @@
   by <%= @photographer.fname.titleize %> <%= @photographer.lname.titleize %>
 </p>
 
+  <ul id="og-grid" class="og-grid">
+  <% @photos.each do |photo| %>
+      <li><%= link_to(image_tag(photo.photo.url(:thumb)), photo) %></li>
+  <% end %>
+  </ul>
+  
 <%= link_to 'Add Photos to Gallery!', new_photo_path %> |
 <%= link_to 'Edit', edit_gallery_path(@gallery) %> |
 <%= link_to 'Back', galleries_path %> |
 <%= link_to 'Delete Album', gallery_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+      
+        <% @photos.each do |photo| %>
+          <li><%= link_to(image_tag(photo.photo.url(:thumb)), photo) %></li>
+        <% end %>

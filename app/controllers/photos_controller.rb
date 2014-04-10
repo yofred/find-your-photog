@@ -24,6 +24,7 @@ class PhotosController < ApplicationController
 
   def new
     @photo = Photo.new
+    @galleries = Gallery.where(:photographer_id => current_photographer)
 
     respond_to do |format|
       format.html # new.html.erb
