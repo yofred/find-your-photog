@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
     
     def authorize
-      if current_user.nil?
+      if current_user.nil? && current_photographer.nil?
         redirect_to :login
       end
     end
