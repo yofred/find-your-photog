@@ -1,13 +1,18 @@
 
+body {
+	background:#121212;
+}
 
 .cbp-af-header {
+/*  background:#121212;*/
+  background:#121212;
+  opacity:.86;
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
-	background: gray;
 	z-index: 10000;
-	height: 230px;
+	height: 200px;
 	overflow: hidden;
 	-webkit-transition: height 0.3s;
 	-moz-transition: height 0.3s;
@@ -15,6 +20,7 @@
 }
 
 .cbp-af-header .cbp-af-inner {
+
 	width: 90%;
 	max-width: 69em;
 	margin: 0 auto;
@@ -39,7 +45,7 @@
 	color: white;
 	letter-spacing: 4px;
 	font-size: 4em;
-	margin-top: 30px;
+	margin-top: 20px;
 	float: left;
 }
 
@@ -49,7 +55,7 @@
 
 /* header nav links! */
 .cbp-af-header nav a {
-	color: lightgray;
+	color: #B7B7B7;
 	font-weight: 700;
 	margin: 0 0 0 20px;
 	font-size: 1.4em;
@@ -57,7 +63,6 @@
 
 .cbp-af-header nav a:hover {
 	color:white;
-  background:gray;
 }
 
 /* Transitions and class for reduced height */
@@ -97,11 +102,11 @@
 	}
   
   .cbp-af-header h1 {
-    margin-top:40px;
+    margin-top:5px;
   }
   
   .cbp-af-header nav {
-    margin-top:-50px;
+    margin-top:-70px;
   }
 
 	.cbp-af-header h1,
@@ -171,6 +176,19 @@ li {
 
 a:hover {
 	color: lightgray;
+}
+
+b{
+  color:#92C8CD;
+}
+
+p{
+  color:#B1B1B1;
+  font-size: 2em;
+}
+
+h1{
+  color:#92C8CD;
 }
 
 /*padding from top of thumbnail gallery*/
