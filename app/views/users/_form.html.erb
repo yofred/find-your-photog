@@ -12,33 +12,27 @@
   <% end %>
 
   <div class="field">
-    <%= f.label "First name" %><br />
-    <%= f.text_field :fname %>
+    <%= f.text_field :fname, placeholder: "First Name", :style => "width: 335px;"  %>
   </div>
   <div class="field">
-    <%= f.label "Last name" %><br />
-    <%= f.text_field :lname %>
+    <%= f.text_field :lname, placeholder: "Last Name", :style => "width: 335px;"  %>
   </div>
   <div class="field">
-    <%= f.label "Email" %><br />
-    <%= f.text_field :email %>
+    <%= f.text_field :email, placeholder: "Your email", :style => "width: 335px;"  %>
   </div>
   <div class="field">
-    <%= f.label "Password" %><br />
-    <%= f.password_field :password %>
+    <%= f.password_field :password, placeholder: "Your password", :style => "width: 335px;"  %>
   </div>
   <div class="field">
-    <%= f.label "Password confirmation" %><br />
-    <%= f.password_field :password_confirmation %>
+    <%= f.password_field :password_confirmation, placeholder: "Confirm your password", :style => "width: 335px;"  %>
   </div>
   <div class="field">
-    <%= f.label "Username" %><br />
-    <%= f.text_field :handle %>
+    <%= f.text_field :handle, placeholder: "Choose a username", :style => "width: 335px;"  %>
   </div>
   <div class="field">
-    <%= f.label "Short bio" %><br />
-    <%= f.text_area :bio %>
+    <%= f.text_area :bio, placeholder: "Write a short bio about yourself! (optional)", :style => "width: 335px;"  %>
   </div>
+  <br>
   <div class="actions">
     <%= f.submit %>
   </div>

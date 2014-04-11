@@ -191,6 +191,20 @@ h1{
   color:#92C8CD;
 }
 
+label{
+  color:white;
+}
+
+.dark{
+	background: url('./images/dark_grey.jpg');
+}
+
+.dark input[type=text]{
+	border:2px solid #CACACA;
+	background-color:#121212;
+	color:#C9BEBF;
+}
+
 /*padding from top of thumbnail gallery*/
 .container {
 	position: relative;

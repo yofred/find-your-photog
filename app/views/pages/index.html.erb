@@ -1,30 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Find your wedding photographer!</title>
-  </head>
-  <body>
       
       <div class="filter_container">
         
-          <%= link_to "FindYourPhotog", :root, class: "filter", id: "findyourphotog", remote: true %>
-          <%= link_to "500px", :root, class: "filter", id: "f00px", remote: true %>
+          <!-- <%= link_to "FindYourPhotog", :root, class: "filter", id: "findyourphotog_button" %> -->
+          <!-- <%= link_to "500px", :root, class: "filter", id: "f00px_button" %> -->
+          
+          <%= content_tag(:button, "Find Your Photog", class: "filter", id: "findyourphotog_button")%>
+          <%= content_tag(:button, "500px", class: "filter", id: "f00px_button")%>
         
       </div>
       
-      <ul id="og-grid" class="og-grid" id="findyourphotog" remote="true">
+      <ul class="og-grid" id="findyourphotog">
         <% @photos.each do |photo| %>
           <li><%= link_to(image_tag(photo.photo.url(:thumb)), photo) %></li>
         <% end %>
       </ul>
       
-      <ul id="og-grid" class="og-grid" id="f00pix" remote="true">
+      <ul  class="og-grid" id="f00px">
           <% @f00_photos.each do |photo|%>
             <li><%= link_to(image_tag(photo[0..-6]+'3.jpg'), root_path )%></li>  
           <% end %>
       </ul>      
-
-  </body>
-</html>
         
-        
+         <!-- id="og-grid" -->

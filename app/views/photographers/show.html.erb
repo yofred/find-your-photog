@@ -2,14 +2,18 @@
 
 <% if @photos.size > 0 %>
     <ul id="og-grid" class="og-grid">
-      <% @photos.each do |photo| %>
+      <% @photos.last(4).each do |photo| %>
       <li><%= link_to(image_tag(photo.photo.url(:thumb)), photo) %></li>
       <% end %>
     </ul>
   
-  <%= link_to "View more photos from #{@photographer.fname}", galleries_path %>
+  <%= link_to "Last 4 photos from #{@photographer.fname}. View more photos!", galleries_path %>
   <% else %>
+    <% if current_photographer && @photographer.id == current_photographer.id %>
+      <%= link_to "You have no photos yet. Add some!", new_gallery_path, :style => "color: yellow;" %>
+      <% else %>
     <p><%= @photographer.fname %> has no photos.</p>
+    <% end %>
 <% end %>
 
 <p>

@@ -3,7 +3,7 @@
 
 <p>
   <h1><%= @gallery.title %></h1>
-  by <%= link_to "#{@photographer.fname.titleize} #{@photographer.lname.titleize}", photographer_path(@photographer.id) %>
+  <b>by</b> <%= link_to "#{@photographer.fname.titleize} #{@photographer.lname.titleize}", photographer_path(@photographer.id) %>
 </p>
 
   <ul id="og-grid" class="og-grid">
