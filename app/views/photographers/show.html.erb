@@ -1,13 +1,22 @@
 <p id="notice"><%= notice %></p>
 
 <% if @photos.size > 0 %>
-    <ul id="og-grid" class="og-grid">
+    <ul class="og-grid" id="view_4">
       <% @photos.last(4).each do |photo| %>
       <li><%= link_to(image_tag(photo.photo.url(:thumb)), photo) %></li>
       <% end %>
     </ul>
+    <ul class="og-grid" id="view_all">
+      <% @photos.each do |photo| %>
+      <li><%= link_to(image_tag(photo.photo.url(:thumb)), photo) %></li>
+      <% end %>
+    </ul>
   
-  <%= link_to "Last 4 photos from #{@photographer.fname}. View more photos!", galleries_path %>
+  <!-- <%#= link_to "Last 4 photos from #{@photographer.fname}. View all photos!", galleries_path, id: "photos_all_button" %> -->
+  
+  <%= content_tag(:button, "Most Recent", class: "filter", id: "view_less_button")%>
+  <%= content_tag(:button, "View all photos!", class: "filter", id: "view_all_button")%>
+  
   <% else %>
     <% if current_photographer && @photographer.id == current_photographer.id %>
       <%= link_to "You have no photos yet. Add some!", new_gallery_path, :style => "color: yellow;" %>
@@ -62,5 +71,6 @@
 
 <% if current_photographer && @photographer.id == current_photographer.id %>
   <%= link_to 'New Gallery', new_gallery_path %> |
+  <%= link_to 'Add Photos', new_photo_path %> |
   <%= link_to 'Edit Profile', edit_photographer_path(@photographer) %> 
 <% end %>

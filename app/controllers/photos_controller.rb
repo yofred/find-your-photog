@@ -73,7 +73,7 @@ class PhotosController < ApplicationController
     @photo.destroy
 
     respond_to do |format|
-      format.html { redirect_to :root }
+      format.html { redirect_to photographer_path(current_photographer.id) }
       format.json { head :no_content }
     end
   end
