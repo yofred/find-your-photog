@@ -4,9 +4,12 @@ class PagesController < ApplicationController
     string = F00px.get('photos')    
     path = JsonPath.new('$..image_url')
     
+    
+    new_path = JsonPath.new('$.photo')
+    @f00 = path.on(string.body)
+    
     @f00_photos = path.on(string.body)
     @photos = Photo.all
-    @catpic = "http://placekitten.com/280/280"
     
     respond_to do |format|
       format.html # index.html.erb
