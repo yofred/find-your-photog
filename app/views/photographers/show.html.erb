@@ -2,13 +2,17 @@
 
 <% if @photos.size > 0 %>
     <ul class="og-grid" id="view_4">
-      <% @photos.last(4).each do |photo| %>
-      <li><%= link_to(image_tag(photo.photo.url(:thumb)), photo) %></li>
+      <% unless photo.photo.url.blank? %>
+        <% @photos.last(4).each do |photo| %>
+        <li><%= link_to(image_tag(photo.photo.url(:thumb)), photo) %></li>
+        <% end %>
       <% end %>
     </ul>
     <ul class="og-grid" id="view_all">
       <% @photos.each do |photo| %>
-      <li><%= link_to(image_tag(photo.photo.url(:thumb)), photo) %></li>
+        <% unless photo.photo.url.blank? %>
+          <li><%= link_to(image_tag(photo.photo.url(:thumb)), photo) %></li>
+        <% end %>
       <% end %>
     </ul>
   
