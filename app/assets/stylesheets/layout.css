@@ -54,7 +54,7 @@ body {
 	background:-moz-linear-gradient( center top, #121212 5%, #141414 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#121212', endColorstr='#141414');
 	background-color:#121212;
-  border:;
+/*  border:;*/
   border:2px solid #A8A7A9;
   
 }.filter:active {
