@@ -9,16 +9,50 @@
 //   
 // });
 
+// works!!!
 // $(document).ready(function(){
-//   $("#findyourphotog_button").on('click', function() {
+//   $("#f00px_button").on('click', function() {
 //     if($("#findyourphotog").is(':hidden')) {
 //       $("#findyourphotog").show();
+//       $("#f00px").hidden();
 //     } else {
 //       $("#findyourphotog").hide();
 //       $("#f00px").show();
 //     }
 //   });
+//   $("#findyourphotog_button").on('click', function() {
+//     if($("#f00px").is(':hidden')) {
+//       $("#f00px").show();
+//       $("#findyourphotog").hidden();
+//     } else {
+//       $("#f00px").hide();
+//       $("#findyourphotog").show();
+//     }
+//   });
 // });
+
+
+// $('#findyourphotog').fadeToggle('fast');
+
+// $(document).ready(function(){
+//   $("#f00px_button").on('click', function() {
+//     if($("#f00px").is(':hidden')) {
+//       $('#f00px').fadeToggle('slow');
+//       $("#findyourphotog").hidden();
+//     } else {
+//       $("#findyourphotog").hidden();
+//     }
+//   });
+//   $("#findyourphotog_button").on('click', function() {
+//     if($("#findyourphotog").is(':hidden')) {
+//       $('#findyourphotog').fadeToggle('slow');
+//       $("#f00px").hidden();
+//     } else {
+//       $("#f00px").hidden();
+//     }
+//   });
+// });
+
 
 // $(document).ready(function(){
 //   $("#findyourphotog_button").on('click', function() {
@@ -40,16 +74,17 @@
 //   });
 // });
 
-$(document).ready(function(){
-  $("#findyourphotog_button").click(function(){
-    $("#f00px").hide();
-    $("#fingyourphotog").show();
-  });
-  $("#f00px_button").click(function(){
-    $("#findyourphotog").hide();
-    $("#f00px").show();
-  });
-});
+// TODO
+// $(document).ready(function(){
+//   $("#findyourphotog_button").click(function(){
+//     $("#f00px").hide();
+//     $("#fingyourphotog").show();
+//   });
+//   $("#f00px_button").click(function(){
+//     $("#findyourphotog").hide();
+//     $("#f00px").show();
+//   });
+// });
 
 
 // $(".item").each(function() {
@@ -119,29 +154,35 @@ $(document).ready(function(){
 //   });
 // });
 
-
-
-
-
-
-
-// $(document).ready(function(){  
-//   $("#f00px_button").on('click', function(){
-//     $("#findyourphotog").hide();
-//     $("#f00px").show();
-//   });
-//   
-//   $("#findyourphotog_button").on('click', function(){
-//     $("#f00px").hide();
-//     $("#findyourphotog").show();
-//   }); 
-// });
+// Works!! TODO
+$(document).ready(function(){  
+  $("#f00px_button").on('click', function(){
+    $("#findyourphotog").hide();
+    $("#f00px").show();
+  });
+  
+  $("#findyourphotog_button").on('click', function(){
+    $("#f00px").hide();
+    $("#findyourphotog").show();
+  }); 
+});
 
 // $(document).ready(function(){
 //   $( "#findyourphotog_button" ).on('click', function() {
-//     if($("#f00px").is(':visible'));
-//     $('#findyourphotog').fadeToggle('fast');
-//   });
+//     if($("#f00px").is(':visible')) {
+//     $('#f00px').fadeToggle('slow');
+//     $("#findyourphotog").show();
+//   } else {
+//     $("#findyourphotog").show();
+// });
+// 
+//   $( "#f00px_button" ).on('click', function() {
+//     if($("#findyourphotog").is(':visible')) {
+//     $('#findyourphotog').fadeToggle('slow');
+//     $("#f00px").show();
+//   } else {
+//     $("#f00px").show();
+// });
 // });
 
 
