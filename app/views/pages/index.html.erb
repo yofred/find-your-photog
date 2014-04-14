@@ -1,26 +1,18 @@
-      
-      <div class="filter_container">
-        
-          <!-- <%= link_to "FindYourPhotog", :root, class: "filter", id: "findyourphotog_button" %> -->
-          <!-- <%= link_to "500px", :root, class: "filter", id: "f00px_button" %> -->
-          
-          <%= content_tag(:button, "Find Your Photog", class: "filter", id: "findyourphotog_button")%>
-          <%= content_tag(:button, "500px", class: "filter", id: "f00px_button")%>
-        
-      </div>
-      
-      <ul class="og-grid" id="findyourphotog">
-        <% @photos.each do |photo| %>
-          <% unless photo.photo.url.blank? %>
-          <li><%= link_to(image_tag(photo.photo.url(:thumb)), photo) %></li>
-          <% end %>
-        <% end %>
-      </ul>
-      
-      <ul  class="og-grid" id="f00px">
-          <% @f00_photos.each do |photo|%>
-            <li><%= link_to(image_tag(photo[0..-6]+'3.jpg'), "http://500px.com/popular" )%></li>  
-          <% end %>
-      </ul>      
-        
-         <!-- id="og-grid" -->
+<div class="filter_container">
+    <%= content_tag(:button, "Find Your Photog", class: "filter", id: "findyourphotog_button")%>
+    <%= content_tag(:button, "500px", class: "filter", id: "f00px_button")%>
+</div>
+
+<ul class="og-grid" id="findyourphotog">
+  <% @photos.each do |photo| %>
+    <% unless photo.photo.url.blank? %>
+    <li><%= link_to(image_tag(photo.photo.url(:thumb)), photo) %></li>
+    <% end %>
+  <% end %>
+</ul>
+
+<ul  class="og-grid" id="f00px">
+    <% @f00_photos.each do |photo|%>
+      <li><%= link_to(image_tag(photo[0..-6]+'3.jpg'), "http://500px.com/popular" )%></li>  
+    <% end %>
+</ul>

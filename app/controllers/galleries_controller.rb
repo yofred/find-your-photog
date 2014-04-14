@@ -1,6 +1,7 @@
 class GalleriesController < ApplicationController
   before_filter :authorize, :only => [:new, :edit, :create, :update]
 
+
   def index
     @galleries = Gallery.all
 
@@ -36,7 +37,6 @@ class GalleriesController < ApplicationController
 
   def create
     @gallery = Gallery.new(params[:gallery])
-    
 
     respond_to do |format|
       if @gallery.save
