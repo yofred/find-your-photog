@@ -4,4 +4,6 @@ class Comment < ActiveRecord::Base
   belongs_to :photo
   belongs_to :photographer
   belongs_to :user
+  has_many :comment_photos
+  has_many :photos, :through => :comment_photos
 end

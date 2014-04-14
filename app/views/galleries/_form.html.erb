@@ -1,4 +1,6 @@
 <%= form_for(@gallery) do |f| %>
+
+  <!-- displays any errors -->
   <% if @gallery.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@gallery.errors.count, "error") %> prohibited this gallery from being saved:</h2>
@@ -11,6 +13,7 @@
     </div>
   <% end %>
   
+  <!-- Chooses a gallery name -->
   <div class="field">
     <%= f.text_field :title, placeholder: "Name of Gallery", size: 27 %>
   </div>
@@ -18,4 +21,5 @@
     <%= f.submit %>
   </div>
   <br>
+  
 <% end %>

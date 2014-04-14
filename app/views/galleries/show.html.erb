@@ -1,19 +1,21 @@
-  
 <p id="notice"><%= notice %></p>
 
 <p>
+  <!-- shows the new gallery title and includes the photographer's name -->
   <h1><%= @gallery.title %></h1>
   <b>by</b> <%= link_to "#{@photographer.fname.titleize} #{@photographer.lname.titleize}", photographer_path(@photographer.id) %>
 </p>
 
-  <ul id="og-grid" class="og-grid">
+<!-- displays photos associated with the gallery -->
+<ul id="og-grid" class="og-grid">
   <% @photos.each do |photo| %>
     <% unless photo.photo.url.blank? %>
       <li><%= link_to(image_tag(photo.photo.url(:thumb)), photo) %></li>
     <% end %>
   <% end %>
-  </ul>
+</ul>
 
+<!-- if the creator of the album is logged in, show authorized actions -->
 <% if current_photographer != nil && @photographer.id == current_photographer.id %>
   <%= link_to 'Add Photos to Gallery!', new_photo_path %> |
   <%= link_to 'Edit', edit_gallery_path(@gallery) %> |
