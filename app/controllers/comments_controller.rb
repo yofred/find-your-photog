@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  before_filter :authorize, :only => [:new, :edit, :create, :update, :destroy]
+  
   # GET /comments
   # GET /comments.json
   def index
@@ -41,9 +43,12 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     @comment = Comment.new(params[:comment])
+    photo = Photo.find(params[:id])
 
     respond_to do |format|
       if @comment.save
+        photo.update_attributes(:comment_id => comment.id)
+        
         format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
         format.json { render json: @comment, status: :created, location: @comment }
       else

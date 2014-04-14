@@ -1,8 +1,9 @@
 class PhotosController < ApplicationController
-  before_filter :authorize, :only => [:new, :edit, :create, :update, :destroy]
+  # gives access to these actions only to authorized users
+  before_filter :authorize, :only => [:new, :create, :update, :destroy]
 
+  # list all thumbnails of photos
   def index
-    
     redirect_to :root
     
     @photos = Photo.all
@@ -13,6 +14,7 @@ class PhotosController < ApplicationController
     end
   end
 
+  # show photo
   def show
     @photo = Photo.find(params[:id])
     @photographer = Photographer.find(@photo.photographer_id)
@@ -22,7 +24,8 @@ class PhotosController < ApplicationController
       format.json { render json: @photo }
     end
   end
-
+  
+  #  new photo
   def new
     @photo = Photo.new
     @galleries = Gallery.where(:photographer_id => current_photographer)
@@ -32,17 +35,13 @@ class PhotosController < ApplicationController
       format.json { render json: @photo }
     end
   end
-
-  def edit
-    @photo = Photo.find(params[:id])
-  end
-
+  
+  # create new photos
   def create
     @photo = Photo.new(params[:photo])
 
     respond_to do |format|
       if @photo.save
-        @photo.update_attributes(:photographer_id => current_photographer.id)
         format.html { redirect_to @photo, notice: 'Photo was successfully uploaded!' }
         format.json { render json: @photo, status: :created, location: @photo }
       else
@@ -52,6 +51,7 @@ class PhotosController < ApplicationController
     end
   end
 
+  # update photos
   def update
     @photo = Photo.find(params[:id])
 
@@ -66,8 +66,7 @@ class PhotosController < ApplicationController
     end
   end
 
-  # DELETE /photos/1
-  # DELETE /photos/1.json
+  # delete photos
   def destroy
     @photo = Photo.find(params[:id])
     @photo.destroy

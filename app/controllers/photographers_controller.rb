@@ -1,6 +1,8 @@
 class PhotographersController < ApplicationController
+  # gives access to these actions only to authorized users
   before_filter :authorize, :only => [:edit, :update, :destroy]
 
+  # show all photographers
   def index
     @photographers = Photographer.all
 
@@ -10,6 +12,7 @@ class PhotographersController < ApplicationController
     end
   end
 
+  # show photographer
   def show
     @photographer = Photographer.find(params[:id])
     @photos = Photo.where(:photographer_id => @photographer.id)
@@ -21,6 +24,7 @@ class PhotographersController < ApplicationController
     end
   end
 
+  # create a new photographer
   def new
     @photographer = Photographer.new
 
@@ -30,10 +34,12 @@ class PhotographersController < ApplicationController
     end
   end
 
+  # edit attributes of photogapher and send to update
   def edit
     @photographer = Photographer.find(params[:id])
   end
 
+  # create a new Photographer object and establish a session
   def create
     @photographer = Photographer.new(params[:photographer])
 
@@ -50,6 +56,7 @@ class PhotographersController < ApplicationController
     end
   end
 
+  # update attributes of a Photographer object, redirect to photographer#show
   def update
     @photographer = Photographer.find(params[:id])
 
@@ -64,6 +71,7 @@ class PhotographersController < ApplicationController
     end
   end
 
+  # deletes a Photographer object
   def destroy
     @photographer = Photographer.find(params[:id])
     @photographer.destroy

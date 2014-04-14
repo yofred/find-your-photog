@@ -1,7 +1,8 @@
 class GalleriesController < ApplicationController
+  # gives access to these actions only to authorized users
   before_filter :authorize, :only => [:new, :edit, :create, :update]
 
-
+  # list of all the galleries
   def index
     @galleries = Gallery.all
 
@@ -10,7 +11,8 @@ class GalleriesController < ApplicationController
       format.json { render json: @galleries }
     end
   end
-
+  
+  # dedicated page for each gallery
   def show
     @gallery = Gallery.find(params[:id])
     @photographer = Photographer.find(@gallery.photographer_id)
@@ -22,6 +24,7 @@ class GalleriesController < ApplicationController
     end
   end
   
+  # application for new gallery
   def new
     @gallery = Gallery.new
 
@@ -31,10 +34,12 @@ class GalleriesController < ApplicationController
     end
   end
 
+  # edit gallery details
   def edit
     @gallery = Gallery.find(params[:id])
   end
 
+  # create new gallery and redirect to gallery#show
   def create
     @gallery = Gallery.new(params[:gallery])
 
@@ -50,6 +55,7 @@ class GalleriesController < ApplicationController
     end
   end
 
+  # update new gallery after an edit and redirect to gallery#show
   def update
     @gallery = Gallery.find(params[:id])
 
@@ -64,6 +70,7 @@ class GalleriesController < ApplicationController
     end
   end
 
+  # delete a gallery
   def destroy
     @gallery = Gallery.find(params[:id])
     @gallery.destroy
