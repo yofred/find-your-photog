@@ -39,23 +39,6 @@ class PhotographersController < ApplicationController
     @photographer = Photographer.find(params[:id])
   end
 
-  # create a new Photographer object and establish a session
-  def create
-    @photographer = Photographer.new(params[:photographer])
-
-    respond_to do |format|
-      if @photographer.save
-        session[:photographer_id] = @photographer.id
-        
-        format.html { redirect_to @photographer, notice: 'Photographer was successfully created.' }
-        format.json { render json: @photographer, status: :created, location: @photographer }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @photographer.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
   # update attributes of a Photographer object, redirect to photographer#show
   def update
     @photographer = Photographer.find(params[:id])

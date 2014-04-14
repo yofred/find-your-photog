@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
-    before_filter :authorize, :only => [:edit, :update, :destroy]
-  # GET /users
-  # GET /users.json
+  # gives access to these actions only to authorized users  
+  before_filter :authorize, :only => [:edit, :update, :destroy]
+
+  # lsits all the users
   def index
     @users = User.all
 
@@ -11,8 +12,7 @@ class UsersController < ApplicationController
     end
   end
 
-  # GET /users/1
-  # GET /users/1.json
+  # shows a user
   def show
     @user = User.find(params[:id])
 
@@ -22,8 +22,7 @@ class UsersController < ApplicationController
     end
   end
 
-  # GET /users/new
-  # GET /users/new.json
+  # creates a new user
   def new
     @user = User.new
 
@@ -33,31 +32,12 @@ class UsersController < ApplicationController
     end
   end
 
-  # GET /users/1/edit
+  # edit a user attribute
   def edit
     @user = User.find(params[:id])
   end
 
-  # POST /users
-  # POST /users.json
-  def create
-    @user = User.new(params[:user])
-
-    respond_to do |format|
-      if @user.save
-        session[:user_id] = @user.id  
-        
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render json: @user, status: :created, location: @user }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PUT /users/1
-  # PUT /users/1.json
+  # updates user attributes and redirects to user profile
   def update
     @user = User.find(params[:id])
 
@@ -72,8 +52,7 @@ class UsersController < ApplicationController
     end
   end
 
-  # DELETE /users/1
-  # DELETE /users/1.json
+  # deletes a user account
   def destroy
     @user = User.find(params[:id])
     @user.destroy
