@@ -39,9 +39,12 @@ class PhotosController < ApplicationController
   # create new photos
   def create
     @photo = Photo.new(params[:photo])
+    @photographer = Photographer.find(current_photographer.id)
 
     respond_to do |format|
       if @photo.save
+        @photo.update_attributes(:photographer_id => @photographer.id)
+        @photographer.update_attributes(:photo_id => @photo.id)
         format.html { redirect_to @photo, notice: 'Photo was successfully uploaded!' }
         format.json { render json: @photo, status: :created, location: @photo }
       else

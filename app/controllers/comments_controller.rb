@@ -30,7 +30,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @comment }
+      format.js
     end
   end
 
@@ -42,13 +42,10 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-    @comment = Comment.new(params[:comment])
-    photo = Photo.find(params[:id])
+    @comment = Comment.new(params[:comment]) 
 
     respond_to do |format|
       if @comment.save
-        photo.update_attributes(:comment_id => comment.id)
-        
         format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
         format.json { render json: @comment, status: :created, location: @comment }
       else

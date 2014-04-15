@@ -1,12 +1,10 @@
 Findyourweddingphotographer::Application.routes.draw do
   # restful routes established
   resources :users
-  resources :preferences
   resources :photographers
-  resources :styles
-  resources :comments
   resources :galleries
   resources :photos
+  resources :comments
   
   # set root page
   root :to => 'pages#index'

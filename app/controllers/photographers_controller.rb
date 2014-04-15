@@ -5,6 +5,8 @@ class PhotographersController < ApplicationController
   # show all photographers
   def index
     @photographers = Photographer.all
+    
+    @photographers = Photographer
 
     respond_to do |format|
       format.html # index.html.erb
@@ -31,6 +33,23 @@ class PhotographersController < ApplicationController
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @photographer }
+    end
+  end
+  
+  # create a new Photographer object and establish a session
+  def create
+    @photographer = Photographer.new(params[:photographer])
+
+    respond_to do |format|
+      if @photographer.save
+        session[:photographer_id] = @photographer.id
+        
+        format.html { redirect_to @photographer, notice: 'Photographer was successfully created.' }
+        format.json { render json: @photographer, status: :created, location: @photographer }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @photographer.errors, status: :unprocessable_entity }
+      end
     end
   end
 
