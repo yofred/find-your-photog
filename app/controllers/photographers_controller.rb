@@ -5,8 +5,6 @@ class PhotographersController < ApplicationController
   # show all photographers
   def index
     @photographers = Photographer.all
-    
-    @photographers = Photographer
 
     respond_to do |format|
       format.html # index.html.erb

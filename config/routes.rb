@@ -14,4 +14,6 @@ Findyourweddingphotographer::Application.routes.draw do
   post "/pages" => 'pages#create_photographer', :as => :photologin
   delete "/login" => 'pages#logout', :as => :logout
   
+  get "/home" => 'home#howitworks', :as => :howitworks
+  
 end

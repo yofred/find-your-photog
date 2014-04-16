@@ -2,17 +2,9 @@ class PagesController < ApplicationController
 
   # the root page where all photos are displayed through thumbnail
   def index
-    
-    # gets a JSON object through the 500px API
-    string = F00px.get('photos')    
-    # gem JsonPath creates a path to the image_url hash of the JSON
-    path = JsonPath.new('$..image_url')
-    # parses the JSON
-    new_path = JsonPath.new('$.photo')
-    # creates global variable of the parsed JSON where we store the image_url of 500px images
-    @f00_photos = path.on(string.body)
-    # creates global variable of every Photo object
+
     @photos = Photo.all
+    @f00_photos = JsonPath.new('$..image_url').on(F00px.get('photos').body)
     
     respond_to do |format|
       format.html

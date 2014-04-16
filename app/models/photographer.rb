@@ -15,10 +15,12 @@ class Photographer < ActiveRecord::Base
 
   # method to create a string that consists of a photographer first and last name with company name
   def full_name_and_company_name
-    "#{self.fname.downcase.titleize} #{self.lname.downcase.titleize} of #{self.company_name} "
+    "#{self.fname.downcase.titleize} #{self.lname.downcase.titleize} of #{self.company_name}"
   end
   
   has_many :galleries
   has_many :photos
   has_many :comments
 end
+
+
