@@ -6,6 +6,7 @@
 
 <!-- original content thumbnails -->
 <ul class="og-grid" id="findyourphotog">
+  <p>Find Your Photog Gallery</p>
   <% @photos.reverse.each do |photo| %>
     <% unless photo.photo.url.blank? %>
     <li><%= link_to(image_tag(photo.photo.url(:thumb)), photo) %></li>
@@ -15,6 +16,7 @@
 
 <!-- 500px thumbnails -->
 <ul  class="og-grid" id="f00px">
+    <p>500px Gallery</p>
     <% @f00_photos.each do |photo|%>
       <li><%= link_to(image_tag(photo[0..-6]+'3.jpg'), "http://500px.com/popular" )%></li>  
     <% end %>
