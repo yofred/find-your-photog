@@ -20,7 +20,7 @@ class PagesController < ApplicationController
     # if the provided passord matches the user, session is established
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to :root
+      redirect_to user, notice: 'You have successfully logged in!'
     else
       # if password doesnt match, session is not established
       redirect_to :root
@@ -35,7 +35,7 @@ class PagesController < ApplicationController
     # if the provided password matches with the photographer, session is established
     if photographer && photographer.authenticate(params[:password])
       session[:photographer_id] = photographer.id
-      redirect_to :root
+      redirect_to photographer, notice: 'You have successfully logged in!'
     else
       # if password doesnt match, session is not established
       redirect_to :root

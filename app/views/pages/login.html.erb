@@ -1,16 +1,19 @@
-<%= form_tag login_path do %>
+<%= form_tag login_path, :id => 'login' do %>
   
-<%= text_field_tag :email, nil, placeholder: "email", size: 27 %>
-<%= password_field_tag :password, nil, placeholder: "password", size: 27 %>
-<%= submit_tag "log in" %>
+  <%= text_field_tag :email, nil, placeholder: "email", size: 27, :class => 'email' %>
+  <%= password_field_tag :password, nil, placeholder: "password", size: 27, :class => 'password' %>
+  <%= submit_tag "User Log In" %>
+  <% end %>
+
+<%= form_tag photologin_path, :id => 'photog_login' do %>
+  
+  <%= text_field_tag :email, nil, placeholder: "email", size: 27, :class => 'email' %>
+  <%= password_field_tag :password, nil, placeholder: "password", size: 27, :class => 'password' %>
+  <%= submit_tag "Photographer Log In" %>
 <% end %>
 
-<%= form_tag photologin_path do %>
-  
-<%= text_field_tag :email, nil, placeholder: "email", size: 27 %>
-<%= password_field_tag :password, nil, placeholder: "password", size: 27 %>
-<%= submit_tag "log in as photographer", :controller => "pages#create_photographer" %>
-<% end %>
+<!-- , :controller => "pages#create_photographer"  -->
+
 <br>            
 <%= link_to 'Create photographer account', new_photographer_path %>
 | <%= link_to 'Create user account', new_user_path %>
