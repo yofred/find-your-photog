@@ -59,3 +59,7 @@ gem 'carrierwave'
 gem 'fog'
 
 gem 'mini_magick'
+
+gem 'lol_dba'
+
+gem 'consistency_fail'

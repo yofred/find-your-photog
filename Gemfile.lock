@@ -53,6 +53,7 @@ GEM
       execjs
     coffee-script-source (1.7.0)
     columnize (0.3.6)
+    consistency_fail (0.3.2)
     database_cleaner (1.2.0)
     debugger (1.6.6)
       columnize (>= 0.3.1)
@@ -106,6 +107,10 @@ GEM
     launchy (2.4.2)
       addressable (~> 2.3)
     libv8 (3.16.14.3)
+    lol_dba (1.6.0)
+      actionpack (>= 3.0)
+      activerecord (>= 3.0)
+      railties (>= 3.0)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -207,6 +212,7 @@ DEPENDENCIES
   capybara
   carrierwave
   coffee-rails (~> 3.2.1)
+  consistency_fail
   database_cleaner
   debugger
   dotenv-rails
@@ -216,6 +222,7 @@ DEPENDENCIES
   json
   jsonpath
   launchy
+  lol_dba
   mini_magick
   pg
   rails (= 3.2.17)
