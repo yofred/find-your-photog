@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140414210223) do
+ActiveRecord::Schema.define(:version => 20140430190510) do
 
   create_table "comment_photos", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -27,6 +27,10 @@ ActiveRecord::Schema.define(:version => 20140414210223) do
     t.datetime "updated_at",      :null => false
   end
 
+  add_index "comments", ["photo_id"], :name => "index_comments_on_photo_id"
+  add_index "comments", ["photographer_id"], :name => "index_comments_on_photographer_id"
+  add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
+
   create_table "galleries", :force => true do |t|
     t.integer  "photo_id"
     t.integer  "user_id"
@@ -35,6 +39,9 @@ ActiveRecord::Schema.define(:version => 20140414210223) do
     t.datetime "updated_at",      :null => false
     t.integer  "photographer_id"
   end
+
+  add_index "galleries", ["photographer_id"], :name => "index_galleries_on_photographer_id"
+  add_index "galleries", ["user_id"], :name => "index_galleries_on_user_id"
 
   create_table "photographers", :force => true do |t|
     t.string   "fname"
@@ -52,6 +59,8 @@ ActiveRecord::Schema.define(:version => 20140414210223) do
     t.integer  "photo_id"
   end
 
+  add_index "photographers", ["email"], :name => "index_photographers_on_email", :unique => true
+
   create_table "photos", :force => true do |t|
     t.integer  "gallery_id"
     t.integer  "comment_id"
@@ -61,6 +70,8 @@ ActiveRecord::Schema.define(:version => 20140414210223) do
     t.datetime "updated_at",      :null => false
     t.string   "photo"
   end
+
+  add_index "photos", ["photographer_id"], :name => "index_photos_on_photographer_id"
 
   create_table "preferences", :force => true do |t|
     t.integer  "user_id"
@@ -75,6 +86,8 @@ ActiveRecord::Schema.define(:version => 20140414210223) do
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
+
+  add_index "preferences", ["user_id"], :name => "index_preferences_on_user_id"
 
   create_table "styles", :force => true do |t|
     t.integer  "photo_id"
