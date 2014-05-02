@@ -12,6 +12,6 @@
   <%= image_tag(@photo.photo.url) %>
 </div>
 
-<%= link_to "Post a new comment!", new_comment_path, :id => "new_comment_button" %>
 
-<!-- , :remote => true -->
+
+<%= render 'comments/form' %>

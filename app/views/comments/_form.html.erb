@@ -16,8 +16,12 @@
     <%= f.text_area :message %>
   </div>
   
+  <%= f.hidden_field :photo_id, :value => @photo.id %>
+  
+  
   <div class="actions">
     <%= f.submit %>
   </div>
+
   
 <% end %>
