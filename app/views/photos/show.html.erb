@@ -14,7 +14,12 @@
 
 <% @comments.each do |comment| %>
   <p><%= comment.message %></p>
+  <% if comment.photographer %>
     <p>posted by <%= comment.photographer.fname %></p>
+  <% end %>
+  <% if comment.user %>
+    <p>posted by <%= comment.user.fname %></p>
+  <% end %>
 <% end %>
 
 <%= render 'comments/form' %>

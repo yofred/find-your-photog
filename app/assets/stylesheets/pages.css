@@ -271,13 +271,6 @@ body, html { font-size: 100%; padding: 0; margin: 0;}*/
 	padding-top: 10em;
 }
 
-.main section p {
-	margin: 0;
-	padding: 1em 0;
-	font-size: 1.8em;
-	line-height: 1.5;
-}
-
 @media screen and (max-width: 55em) {
 
 	.container > header h1,
