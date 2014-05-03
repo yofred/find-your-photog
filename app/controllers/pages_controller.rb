@@ -12,6 +12,12 @@ class PagesController < ApplicationController
     end
   end
   
+
+  def login
+    @user = User.new
+    @photographer = Photographer.new
+  end
+  
   # creates a new user then redirects to the home page
   def create
     # identifies user by provided email

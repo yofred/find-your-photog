@@ -29,12 +29,22 @@
 
 <div class="row">
   <div class="large-5 small-12 center-element center-text">
+    <%= render 'photographers/form' %>
+  </div>
+  
+  <div class="large-5 small-12 center-element center-text">
     <p class="form-button"><%= link_to "Create Photographer Account", new_photographer_path %></p>
   </div>
 </div>
 
+
+
 <div class="row">
+  <div class="large-5 small-12 center-element center-text">
+    <%= render 'users/form' %>
+  </div>
+  
   <div class="large-5 small-12 center-element center-text padding-bottom">
-    <p class="form-button"><%= link_to "Create Photographer Account", new_user_path %></p>
+    <p class="form-button"><%= link_to "Create User Account", new_user_path %></p>
   </div>
 </div>

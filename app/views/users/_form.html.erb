@@ -1,39 +1,40 @@
 <%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+  <div class="row">
+    <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.text_field :fname, placeholder: "First Name", :class => "center-text"  %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.text_field :fname, placeholder: "First Name", :style => "width: 335px;"  %>
-  </div>
-  <div class="field">
-    <%= f.text_field :lname, placeholder: "Last Name", :style => "width: 335px;"  %>
-  </div>
-  <div class="field">
-    <%= f.text_field :email, placeholder: "Your email", :style => "width: 335px;"  %>
-  </div>
-  <div class="field">
-    <%= f.password_field :password, placeholder: "Your password", :style => "width: 335px;"  %>
-  </div>
-  <div class="field">
-    <%= f.password_field :password_confirmation, placeholder: "Confirm your password", :style => "width: 335px;"  %>
-  </div>
-  <div class="field">
-    <%= f.text_field :handle, placeholder: "Choose a username", :style => "width: 335px;"  %>
-  </div>
-  <div class="field">
-    <%= f.text_area :bio, placeholder: "Write a short bio about yourself! (optional)", :style => "width: 335px;"  %>
-  </div>
-  <br>
-  <div class="actions">
-    <%= f.submit %>
+    <div class="field">
+      <%= f.text_field :lname, placeholder: "Last Name", :class => "center-text"  %>
+    </div>
+    <div class="field">
+      <%= f.text_field :email, placeholder: "Your email", :class => "center-text"  %>
+    </div>
+    <div class="field">
+      <%= f.password_field :password, placeholder: "Your password", :class => "center-text"  %>
+    </div>
+    <div class="field">
+      <%= f.password_field :password_confirmation, placeholder: "Confirm your password", :class => "center-text"  %>
+    </div>
+    <div class="field">
+      <%= f.text_field :handle, placeholder: "Choose a username", :class => "center-text"  %>
+    </div>
+    <div class="field">
+      <%= f.text_area :bio, placeholder: "Write a short bio about yourself! (optional)", :rows => "8", :class => "center-text large-12 small-12"  %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Create new account!", :class => "submit-button" %>
+    </div>
   </div>
 <% end %>
