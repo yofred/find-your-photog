@@ -154,46 +154,6 @@ body, html { font-size: 100%; padding: 0; margin: 0;}*/
 .clearfix:before, .clearfix:after { content: " "; display: table; }
 .clearfix:after { clear: both; }
 
-/*for the other pages NEED this*/
-body {
-    font-family: 'Lato', Calibri, Arial, sans-serif;
-    color: black;
-}
-
-h1 a {
-	color: #f0f0f0;
-	text-decoration: none;
-}
-
-a {
-  color:darkgray;
-  text-decoration: none;
-}
-
-li {
-  list-style: none;
-}
-
-a:hover {
-	color: lightgray;
-}
-
-b{
-  color:#92C8CD;
-}
-
-p{
-  color:#B1B1B1;
-  font-size: 2em;
-}
-
-h1{
-  color:#92C8CD;
-}
-
-label{
-  color:white;
-}
 
 .dark{
 	background: url('./images/dark_grey.jpg');

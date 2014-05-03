@@ -12,6 +12,9 @@
   <%= image_tag(@photo.photo.url) %>
 </div>
 
-
+<% @comments.each do |comment| %>
+  <p><%= comment.message %></p>
+    <p>posted by <%= comment.photographer.fname %></p>
+<% end %>
 
 <%= render 'comments/form' %>

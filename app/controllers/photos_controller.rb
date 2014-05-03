@@ -16,11 +16,11 @@ class PhotosController < ApplicationController
 
   # show photo
   def show
-    @comment = Comment.new
-    
     @photo = Photo.find(params[:id])
     @photographer = Photographer.find(@photo.photographer_id)
-
+    @comment = Comment.new
+    @comments = Comment.where(:photo_id => @photo.id)
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @photo }

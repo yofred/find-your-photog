@@ -46,6 +46,10 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
+        
+        @comment.update_attributes(:user_id => current_user.id) if current_user
+        @comment.update_attributes(:photographer_id => current_photographer.id) if current_photographer
+        
         format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
         format.json { render json: @comment, status: :created, location: @comment }
       else
