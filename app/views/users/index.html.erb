@@ -1,9 +1,19 @@
-<h1>Users</h1>
+<div class="row center-text padding-small-bottom">
+    <h1>Users that are seeking a photographer</h1>
+</div>
 
 <% @users.each do |user| %>
   <ul>
-    <li><%= link_to user.handle, user %></li>
+    <div class="row">
+      <div class="small-12 center-text center-element padding-small-bottom">
+        <li><%= link_to user.handle, user %></li>
+      </div>
+    </div>
   </ul>
 <% end %>
 
-<%= link_to 'Create a user account!', new_user_path %>
+<div class="row">
+  <div class="large-3 small-12 center-text center-element">
+    <p class="form-button"><%= link_to 'Create a user account!', new_user_path %></p>
+  </div>
+</div>
