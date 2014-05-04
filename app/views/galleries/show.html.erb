@@ -1,23 +1,30 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="large-5 small-12 center-element center-text">
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <!-- shows the new gallery title and includes the photographer's name -->
-  <h1><%= @gallery.title %></h1>
-  <b>by</b> <%= link_to "#{@photographer.fname.titleize} #{@photographer.lname.titleize}", photographer_path(@photographer.id) %>
-</p>
+      <!-- shows the new gallery title and includes the photographer's name -->
+      <h1><%= @gallery.title %></h1>
+      <b>created by</b>
+      <p><%= link_to "#{@photographer.fname.titleize} #{@photographer.lname.titleize}", photographer_path(@photographer.id) %></p>
+  </div>
 
-<!-- displays photos associated with the gallery -->
-<ul id="og-grid" class="og-grid">
-  <% @photos.each do |photo| %>
-    <% unless photo.photo.url.blank? %>
-      <li><%= link_to(image_tag(photo.photo.url(:thumb)), photo) %></li>
+  <div class="large-5 small-12 center-element center-text">
+    <!-- displays photos associated with the gallery -->
+    <ul id="og-grid" class="og-grid">
+      <% @photos.each do |photo| %>
+        <% unless photo.photo.url.blank? %>
+          <li><%= link_to(image_tag(photo.photo.url(:thumb)), photo) %></li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="large-5 small-12 center-element center-text">
+    <!-- if the creator of the album is logged in, show authorized actions -->
+    <% if current_photographer != nil && @photographer.id == current_photographer.id %>
+      <%= link_to 'Add Photos to Gallery!', new_photo_path %> |
+      <%= link_to 'Edit', edit_gallery_path(@gallery) %> |
+      <%= link_to 'Delete Album', gallery_path, method: :delete, data: { confirm: 'Are you sure?' } %>
     <% end %>
-  <% end %>
-</ul>
-
-<!-- if the creator of the album is logged in, show authorized actions -->
-<% if current_photographer != nil && @photographer.id == current_photographer.id %>
-  <%= link_to 'Add Photos to Gallery!', new_photo_path %> |
-  <%= link_to 'Edit', edit_gallery_path(@gallery) %> |
-  <%= link_to 'Delete Album', gallery_path, method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
+  </div>
+</div>

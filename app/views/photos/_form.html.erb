@@ -1,31 +1,40 @@
 <%= form_for(@photo, html: { multipart: true }) do |f| %>
-  <% if @photo.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@photo.errors.count, "error") %> prohibited this photo from being saved:</h2>
+  <div class="row">
+    <% if @photo.errors.any? %>
+      <div class="large-5 small-12 center-element center-text">
+        <div id="error_explanation">
+          <h2><%= pluralize(@photo.errors.count, "error") %> prohibited this photo from being saved:</h2>
 
-      <ul>
-      <% @photo.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+          <ul>
+          <% @photo.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      </div>
+    <% end %>
   
-  <div>
-    <p>
+    <div class="large-5 small-12 center-element center-text padding-small-bottom">
       <b>Select Album:</b>
-      <%= select("photo", "gallery_id", @galleries.collect {|gallery| [ gallery.title, gallery.id ] }, { :include_blank => true }) %>
-    </p>
+      <%= select("photo", "gallery_id", @galleries.collect {|gallery| [ gallery.title, gallery.id ] }, { :include_blank => true, :class => "center-text" }) %>
+    </div>
+  
+  <div class="large-5 small-12 center-element padding-small-bottom">
+    <div class="field">
+      
+      <%#= f.file_field :photo, :class => "center-text submit-button" %>
+      
+      <input type="file" id="selectedFile" style="display: none;" />
+      <input type="button" class="center-text submit-button" value="Choose Photo" onclick="document.getElementById('selectedFile').click();" />
+      
+      
+    </div>
   </div>
   
-  <div class="field">
-    <p>
-      <%= f.file_field :photo %>
-    </p>
+  <div class="large-5 small-12 center-element center-text padding-small-bottom">
+    <div class="actions">
+      <%= f.submit "Upload Photo!", :class => "submit-button" %>
+    </div>
+  </div>  
   </div>
-  
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-  
 <% end %>
