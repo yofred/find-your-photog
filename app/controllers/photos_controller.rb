@@ -16,7 +16,10 @@ class PhotosController < ApplicationController
 
   # show photo
   def show
-    @photo = Photo.find(params[:id])
+    # @photo = Photo.find(params[:id])
+    @photo = Photo.cached_photo(params[:id])
+    
+    
     @photographer = Photographer.find(@photo.photographer_id)
     @comment = Comment.new
     @comments = Comment.where(:photo_id => @photo.id)
