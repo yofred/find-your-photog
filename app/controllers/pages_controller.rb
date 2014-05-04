@@ -3,7 +3,7 @@ class PagesController < ApplicationController
   # the root page where all photos are displayed through thumbnail
   def index
 
-    @photos = Photo.all
+    @photos = Photo.cached_photos
     @f00_photos = JsonPath.new('$..image_url').on(F00px.get('photos').body)
     
     respond_to do |format|

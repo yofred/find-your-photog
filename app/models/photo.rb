@@ -15,12 +15,16 @@ class Photo < ActiveRecord::Base
   # end
   
   def self.cached_photo(id)
-    Rails.cache.fetch(["Photo", id]) { find(id) }
+    Rails.cache.fetch([Photo, id]) { find(id) }
+  end
+
+  def self.cached_photos
+    Rails.cache.fetch(["photos_index", self.all]) {self.all}
   end
   
-  
   def delete_photo_cache
-    Rails.cache.delete(["Photo", self.id])
+    Rails.cache.delete([Photo, self.id])
+    Rails.cache.delete(["photos_index", self.all])
   end
 
 end
