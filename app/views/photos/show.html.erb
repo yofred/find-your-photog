@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="small-12 center-text padding-bottom">
+  <div class="small-12 center-text padding-small-bottom">
     <p id="notice"><%= notice %></p><br />
       <% if current_photographer && current_photographer.id == @photographer.id %>
         <%= link_to "Continue to your page", photographer_path(@photographer.id) %> |
@@ -13,14 +13,20 @@
   <%= image_tag(@photo.photo.url) %>
 </div>
 
-<% @comments.each do |comment| %>
-  <p><%= comment.message %></p>
-  <% if comment.photographer %>
-    <p>posted by <%= comment.photographer.fname %></p>
+<div class="row">
+  <% @comments.each do |comment| %>
+    <div class="large-5 small-12 center-text center-element padding-small-bottom padding-small-top">
+      <p><%= comment.message %></p>
+      <% if comment.photographer %>
+        <b>posted by <%= comment.photographer.fname %></b>
+      <% end %>
+      <% if comment.user %>
+        <b>posted by <%= comment.user.fname %></b>
+      <% end %>
+    </div>
   <% end %>
-  <% if comment.user %>
-    <p>posted by <%= comment.user.fname %></p>
-  <% end %>
-<% end %>
+</div>
 
-<%= render 'comments/form' %>
+<div class="padding-bottom">
+  <%= render 'comments/form' %>
+</div>
