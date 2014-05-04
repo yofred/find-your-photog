@@ -2,6 +2,7 @@
 <div class="row">
   <div class="large-3 small-12 center-text center-element">
     <%= content_tag(:button, "Find Your Photog", class: "form-button", id: "findyourphotog_button")%>
+    <%= content_tag(:button, "500px", class: "form-button", id: "f00px_button")%>
   </div>
 </div>
 
@@ -12,4 +13,11 @@
     <li><%= link_to(image_tag(photo.photo.url(:thumb)), photo) %></li>
     <% end %>
   <% end %>
+</ul>
+
+<ul  class="og-grid" id="f00px">
+    <p>500px Gallery</p>
+    <% @f00_photos.each do |photo|%>
+      <li><%= link_to(image_tag(photo[0..-10]+'3.jpg'), "http://500px.com/popular" )%></li>  
+    <% end %>
 </ul>

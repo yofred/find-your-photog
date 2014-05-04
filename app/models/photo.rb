@@ -10,21 +10,18 @@ class Photo < ActiveRecord::Base
   has_many :styles
   belongs_to :photographer
   
-  # def show_photo
-  #   Rails.cache.fetch([self, "show_photo"]) {self.find(params[:id])}
-  # end
   
   def self.cached_photo(id)
     Rails.cache.fetch([Photo, id]) { find(id) }
   end
 
   def self.cached_photos
-    Rails.cache.fetch(["photos_index", self.all]) {self.all}
+    Rails.cache.fetch(["Photos_index", self.all]) {self.all}
   end
   
   def delete_photo_cache
     Rails.cache.delete([Photo, self.id])
-    Rails.cache.delete(["photos_index", self.all])
+    Rails.cache.delete(["Photos_index", self.all])
   end
 
 end

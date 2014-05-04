@@ -6,7 +6,7 @@ class PhotosController < ApplicationController
   def index
     redirect_to :root
     
-    @photos = Photo.cached_photos
+    @photos = Photo.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -16,8 +16,10 @@ class PhotosController < ApplicationController
 
   # show photo
   def show
-    # photo is cached
+    # @photo = Photo.find(params[:id])
     @photo = Photo.cached_photo(params[:id])
+    
+    
     @photographer = Photographer.find(@photo.photographer_id)
     @comment = Comment.new
     @comments = Comment.where(:photo_id => @photo.id)
