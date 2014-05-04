@@ -1,9 +1,20 @@
-<h1>Photographers</h1>
+<div class="row">
+  <div class="small-12 center-text">
+    <h1>Photographers</h1>
+  </div>
+</div>
+
 
 <% @photographers.each do |photographer| %>
   <ul>
-    <li><%= link_to photographer.full_name_and_company_name, photographer %></li>
+    <div class="row center-text padding-small-bottom">
+      <li><%= link_to photographer.full_name_and_company_name, photographer %></li>
+    </div>
   </ul>
 <% end %>
 
-<%= link_to 'Create a photographer account!', new_photographer_path %>
+<div class="row">
+  <div class="large-3 small-12 center-text center-element">
+    <p class="form-button"><%= link_to 'SIGN UP', new_photographer_path %></p>
+  </div>
+</div>
