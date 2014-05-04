@@ -12,7 +12,7 @@ body {
 	left: 0;
 	width: 100%;
 	z-index: 10000;
-	height: 200px;
+	height: 110px;
 	overflow: hidden;
 	-webkit-transition: height 0.3s;
 	-moz-transition: height 0.3s;
@@ -45,12 +45,13 @@ body {
 	color: white;
 	letter-spacing: 4px;
 	font-size: 4em;
-	margin-top: 20px;
+	margin-top: -80px;
 	float: left;
 }
 
 .cbp-af-header nav {
 	float: right;
+  top:-60px;
 }
 
 /* header nav links! */
@@ -102,16 +103,16 @@ body {
 	}
   
   .cbp-af-header h1 {
-    margin-top:5px;
+    margin-top:-10px;
   }
   
   .cbp-af-header nav {
-    margin-top:-70px;
+    margin-top:-10px;
   }
 
 	.cbp-af-header h1,
 	.cbp-af-header nav a {
-		line-height: 115px;
+		line-height: 80px;
 	}
 
 	.cbp-af-header nav a {
