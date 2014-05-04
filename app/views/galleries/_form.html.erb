@@ -1,25 +1,29 @@
+
 <%= form_for(@gallery) do |f| %>
-
-  <!-- displays any errors -->
-  <% if @gallery.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@gallery.errors.count, "error") %> prohibited this gallery from being saved:</h2>
-
-      <ul>
-      <% @gallery.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+  <div class="row">    
+    <!-- displays any errors -->
+    <% if @gallery.errors.any? %>
+      <div class="large-5 small-12 center-element center-text">
+        <div id="error_explanation">
+          <h2><%= pluralize(@gallery.errors.count, "error") %> prohibited this gallery from being saved:</h2>
+          <ul>
+          <% @gallery.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      </div>
+    <% end %>
+  
+    <div class="large-5 small-12 center-element center-text">
+      <!-- Chooses a gallery name -->
+      <div class="field">
+        <%= f.text_field :title, placeholder: "Name of Gallery", :class => "center-text" %>
+      </div>
+      <div class="actions">
+        <%= f.submit "Create new gallery!", :class => "submit-button" %>
+      </div>
     </div>
-  <% end %>
-  
-  <!-- Chooses a gallery name -->
-  <div class="field">
-    <%= f.text_field :title, placeholder: "Name of Gallery", size: 27 %>
+    
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-  <br>
-  
 <% end %>

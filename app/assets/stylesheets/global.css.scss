@@ -58,6 +58,12 @@ h1 h2 h3 h4{
   color:$lightblue;
 }
 
+.og-grid img:hover {
+  opacity: .3;
+  transition: all 0.25s ease-in-out;
+//  z-index: 1;
+}
+
 label{
   color:white;
 }
@@ -220,3 +226,16 @@ input.center-text{
     -webkit-transform: rotateX(0deg) rotateY(0deg);
     -moz-transform: rotateX(0deg) rotateY(0deg);
 }
+
+// Image Text -------------------------------------------------------------------------------------
+
+//#wrapper p {
+//  position:relative;
+//  margin-top:-200px;
+//  text-align:center;
+//  left:0px;
+//  visibility:hidden;
+//  z-index:10;
+//}
+
+
