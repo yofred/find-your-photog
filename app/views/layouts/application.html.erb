@@ -9,7 +9,20 @@
 		<div class="container">
 			<div class="cbp-af-header">
 				<div class="cbp-af-inner">
-          <h1 id="nav-logo"><%= link_to(image_tag("findaphotog2.png", :alt =>"findyourphotog logo"), :root) %></h1>
+          <h1 id="nav-logo">
+            <div class="hover panel">
+                <div class="front">
+                    <div class="pad">
+                        <%= link_to(image_tag("findaphotog2.png", :alt =>"findyourphotog logo"), :root) %>
+                    </div>
+                </div>
+                <div class="back">
+                    <div class="pad">
+                        <%= link_to(image_tag("findaphotog2-flip.png", :alt =>"findyourphotog logo"), :root) %>
+                    </div>
+                </div>
+            </div>
+          </h1>
           <section class="color-6">
 					<nav class="cl-effect-3">
 						<a href="<%= photographers_path %>">photographers</a>

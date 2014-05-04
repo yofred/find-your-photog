@@ -1,8 +1,10 @@
-<p id="notice"><%= notice %></p>
+<div class="row center-text">
+  <p id="notice"><%= notice %></p>
+</div>
 
 <% if @photos.size > 0 %>
     <ul class="og-grid" id="view_4">
-        <% @photos.last(4).each do |photo| %>
+        <% @photos.last(3).each do |photo| %>
           <% unless photo.photo.url.blank? %>
             <li><%= link_to(image_tag(photo.photo.url(:thumb)), photo) %></li>
           <% end %>
@@ -18,63 +20,95 @@
   
   <!-- <%#= link_to "Last 4 photos from #{@photographer.fname}. View all photos!", galleries_path, id: "photos_all_button" %> -->
   
-  <%= content_tag(:button, "Most Recent", class: "filter", id: "view_less_button")%>
-  <%= content_tag(:button, "View all photos!", class: "filter", id: "view_all_button")%>
-  
-  <% else %>
-    <% if current_photographer && @photographer.id == current_photographer.id %>
-      <%= link_to "You have no photos yet. Add some!", new_gallery_path, :style => "color: yellow;" %>
-      <% else %>
-    <p><%= @photographer.fname %> has no photos.</p>
-    <% end %>
-<% end %>
+  <div class="row">
+    <div class="large-5 small-12 center-element center-text">
+      <p class="form-button" id="view_less_button"><%= link_to "Most Recent Photos", "#" %></p>
+    </div>
+    <div class="large-5 small-12 center-element center-text">
+      <p class="form-button" id="view_all_button"><%= link_to "View all photos!", "#" %></p>
+    </div>  
 
-<p>
-  <b>Name:</b>
-  <%= @photographer.full_name %> 
-  <span class="photographer_label"> &nbsp;&nbsp; photographer &nbsp;&nbsp; </span>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%= @photographer.email %>
-</p>
-
-<p>
-  <b>Company name:</b>
-  <%= @photographer.company_name %>
-</p>
-
-<p>
-  <b>Website:</b>
-  <%= @photographer.website %>
-</p>
-
-<p>
-  <b>Bio:</b>
-  <%= @photographer.bio %>
-</p>
-
-<p>
-  <b>Galleries:</b>
-  
-  <% if @galleries.size > 0 %>
-  <% @galleries.each do |gallery| %>
-  <ul>
-    <li><%= link_to gallery.title, gallery %></li>
-  </ul>
-  <% end %>
-  <% else %>
-    <% if current_photographer != nil && @photographer.id == current_photographer.id %>
-      <%= link_to 'Create your first gallery!', new_gallery_path %> 
     <% else %>
-      <%= @photographer.fname %> doesn't have any albums.
-    <% end %>
+    <div class="large-5 small-12 center-element center-text">
+      <% if current_photographer && @photographer.id == current_photographer.id %>
+        <%= link_to "You have no photos yet. Add some!", new_gallery_path, :style => "color: yellow;" %>
+        <% else %>
+      <p><%= @photographer.fname %> has no photos.</p>
+      <% end %>
+  </div>
   <% end %>
-</p>
+</div>
 
-<% if current_photographer && @photographer.id == current_photographer.id %>
-  <%= link_to 'New Gallery', new_gallery_path %> |
-  <%= link_to 'Add Photos', new_photo_path %> |
-  <%= link_to 'Edit Profile', edit_photographer_path(@photographer) %> 
-<% end %>
+<div class="row padding-top">
+  <div class="large-5 small-12 center-element center-text">
+    <h3>Name:</h3>
+  </div>
+  <div class="large-5 small-12 center-element center-text">
+    <p><%= @photographer.full_name %></p>
+      <span class="photographer_label"> &nbsp;&nbsp; photographer &nbsp;&nbsp; </span>
+  </div>
+</div>
+<div class="row padding-top">
+  <div class="large-5 small-12 center-element center-text">
+      <h3>Email:</h3>
+  </div>
+  <div class="large-5 small-12 center-element center-text">
+      <p><%= @photographer.email %></p>
+  </div>
+</div>
+<div class="row padding-top">
+  <div class="large-5 small-12 center-element center-text">
+      <h3>Company name:</h3>
+  </div>
+  <div class="large-5 small-12 center-element center-text">
+      <p><%= @photographer.company_name %></p>
+  </div>
+</div>
+<div class="row padding-top">
+  <div class="large-5 small-12 center-element center-text">
+    <h3>Website:</h3>
+  </div>
+  <div class="large-5 small-12 center-element center-text">
+      <p><%= @photographer.website %></p>
+  </div>
+</div>  
+<div class="row padding-top">
+  <div class="large-5 small-12 center-element center-text">
+    <h3>Bio:</h3>
+  </div>
+  <div class="large-8 small-12 center-element center-text">    
+    <p><%= @photographer.bio %></p>
+  </div>
+</div>
+<div class="row padding-top">
+  <div class="large-5 small-12 center-element center-text">
+    <h3>Galleries:</h3>
+  </div>
+</div>
+<% if @galleries.size > 0 %>
+<% @galleries.each do |gallery| %>
+<div class="row padding-bottom">
+  <div class="small-12 center-text">    
+      <ul>
+        <li><%= link_to gallery.title, gallery %></li>
+      </ul>
+      <% end %>
+      <% else %>
+        <% if current_photographer != nil && @photographer.id == current_photographer.id %>
+          <%= link_to 'Create your first gallery!', new_gallery_path %> 
+        <% else %>
+          <%= @photographer.fname %> doesn't have any albums.
+        <% end %>
+      <% end %>
+    </div>
+</div>
+
+<div class="row">
+  <div class="small-12 center-text">
+    <% if current_photographer && @photographer.id == current_photographer.id %>
+      <%= link_to 'New Gallery', new_gallery_path %> |
+      <%= link_to 'Add Photos', new_photo_path %> |
+      <%= link_to 'Edit Profile', edit_photographer_path(@photographer) %> 
+    <% end %>
+  </div>
+</div>

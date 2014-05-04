@@ -1,29 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <%= @user.handle %>'s page
-</p>
+<div class="row padding-top">
+  <div class="large-5 small-12 center-element center-text">
+    <h1><%= @user.handle %>'s page</h1>
+  </di>
+</div>
 
-<p>
-  <b>Gallery:</b>
-  <%= @user.gallery_id %>
-</p>
+<div class="row padding-top">
+  <div class="large-5 small-12 center-element center-text">
+    <h3>Email</h3>
+  </div>
+  <div class="large-5 small-12 center-element center-text">
+    <p><%= @user.email %></p>
+  </div>
+</div>
 
-<p>
-  <b>Style:</b>
-  <%= @user.style_id %>
-</p>
+<div class="row padding-top">
+  <div class="large-5 small-12 center-element center-text">
+    <h3>Bio</h3>
+  </div>
+  <div class="large-5 small-12 center-element center-text">  
+    <p><%= @user.bio %></p>
+  </div>
+</div>
 
-<p>
-  <b>Email:</b>
-  <%= @user.email %>
-</p>
-
-<p>
-  <b>Bio:</b>
-  <%= @user.bio %>
-</p>
-
-<% if current_user != nil && @user.id == current_user.id && current_user.class.name == "User" %>
-  <%= link_to 'Edit Profile', edit_user_path(@user) %> 
-<% end %>
+<div class="row padding-top">
+  <div class="large-5 small-12 center-element center-text">
+    <% if current_user != nil && @user.id == current_user.id && current_user.class.name == "User" %>
+      <%= link_to 'Edit Profile', edit_user_path(@user) %> 
+    <% end %>
+  </div>
+</div>

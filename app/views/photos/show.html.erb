@@ -1,13 +1,14 @@
-<p id="notice"><%= notice %></p>
-  <% if current_photographer && current_photographer.id == @photographer.id %>
-    <%= link_to "Continue to your page", photographer_path(@photographer.id) %> |
-    <%= link_to "Upload another photo", new_photo_path %> |
-    <%= link_to 'Delete Photo', photo_path, method: :delete, data: { confirm: 'Are you sure?' } %> 
-  <% end %>
-<br></br>
+<div class="row">
+  <div class="small-12 center-text padding-bottom">
+    <p id="notice"><%= notice %></p><br />
+      <% if current_photographer && current_photographer.id == @photographer.id %>
+        <%= link_to "Continue to your page", photographer_path(@photographer.id) %> |
+        <%= link_to "Upload another photo", new_photo_path %> |
+        <%= link_to 'Delete Photo', photo_path, method: :delete, data: { confirm: 'Are you sure?' } %> 
+      <% end %>
+  </div>
+</div>
 
-
-<h1>Photo by: <%= @photo.photographer.fname %></h1>
 <div class="scale-with-grid">
   <%= image_tag(@photo.photo.url) %>
 </div>

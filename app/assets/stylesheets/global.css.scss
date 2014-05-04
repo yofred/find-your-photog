@@ -8,14 +8,15 @@ $button-font:helvetica, verdana, sans-serif;
 
 
 body {
-  padding-top:12em;  
+  padding-top:6em;  
   font-family: 'Lato', Calibri, Arial, sans-serif;
-  color: black;
+	background:#121212;
+  color:$lightblue;
 }
 
 @media screen and (max-width: 55em) {
   body{
-    padding-top:6em;
+    padding-top:1em;
   }
 }
 
@@ -42,12 +43,19 @@ b{
 }
 
 p{
+  margin:0;
+  padding:0;
   color:#B1B1B1;
   font-size: 1.4em;
 }
 
-h1{
-  color:#92C8CD;
+ul{
+  margin:0;
+  padding:0;
+}
+
+h1 h2 h3 h4{
+  color:$lightblue;
 }
 
 label{
@@ -133,7 +141,8 @@ input.center-text{
     background-color:$pink;
     
     a{
-      color:white;
+      color:$black;
+      font-weight:bold;
     }
   }
 }
@@ -148,3 +157,66 @@ input.center-text{
   display:inline;
 }
 
+// Logo Animation -------------------------------------------------------------------------------------
+
+.panel {
+    margin: 0 auto;
+    width: 130px;
+    height: 130px;  
+    position: relative;
+    font-size: .8em;
+    -webkit-perspective: 600px;
+    -moz-perspective: 600px;
+}
+/* -- make sure to declare a default for every property that you want animated -- */
+/* -- general styles, including Y axis rotation -- */
+.panel .front {
+    position: absolute;
+    top: 0;
+    z-index: 900;
+    width: inherit;
+    height: inherit;
+    text-align: center;
+    -webkit-transform: rotateX(0deg) rotateY(0deg);
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-transform: rotateX(0deg) rotateY(0deg);
+    -moz-transform-style: preserve-3d;
+    -moz-backface-visibility: hidden;
+    /* -- transition is the magic sauce for animation -- */
+    -o-transition: all .4s ease-in-out;
+    -ms-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+.panel.flip .front {
+    z-index: 900;
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+}
+.panel .back {
+    position: absolute;
+    top: 0;
+    z-index: 800;
+    width: inherit;
+    height: inherit;
+    -webkit-transform: rotateY(-180deg);
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+ 
+    -moz-transform: rotateY(-180deg);
+    -moz-transform-style: preserve-3d;
+    -moz-backface-visibility: hidden;
+    /* -- transition is the magic sauce for animation -- */
+    -o-transition: all .4s ease-in-out;
+    -ms-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+.panel.flip .back {
+    z-index: 1000;
+    -webkit-transform: rotateX(0deg) rotateY(0deg);
+    -moz-transform: rotateX(0deg) rotateY(0deg);
+}
