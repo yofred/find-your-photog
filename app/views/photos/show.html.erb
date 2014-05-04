@@ -18,15 +18,15 @@
     <div class="large-5 small-12 center-text center-element padding-small-bottom padding-small-top">
       <p><%= comment.message %></p>
       <% if comment.photographer %>
-        <b>posted by <%= comment.photographer.fname %></b>
+        <b>posted by <%= link_to comment.photographer.fname, photographer_path(comment.photographer.id) %></b>
       <% end %>
       <% if comment.user %>
-        <b>posted by <%= comment.user.fname %></b>
+        <b>posted by <%= link_to comment.user.fname, user_path(comment.user.id) %></b>
       <% end %>
     </div>
   <% end %>
 </div>
 
-<div class="padding-bottom">
+<div class="content-small-padding">
   <%= render 'comments/form' %>
 </div>
