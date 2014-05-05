@@ -22,7 +22,7 @@
     <div class="large-8 small-12 center-text center-element padding-small-bottom padding-small-top">
       <p><%= comment.message %></p>
       <% if comment.photographer %>
-        <b>posted by <%= link_to comment.photographer.fname, photographer_path(comment.photographer.id) %> on <%= comment.created_at %></b>
+        <b>posted by <%= link_to comment.photographer.fname, photographer_path(comment.photographer.id) %> on <%= format_date(comment.created_at) %></b>
       <% end %>
       <% if comment.user %>
         <b>posted by <%= link_to comment.user.fname, user_path(comment.user.id) %></b>
@@ -34,3 +34,4 @@
 <div class="content-small-padding">
   <%= render 'comments/form' %>
 </div>
+
