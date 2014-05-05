@@ -277,4 +277,46 @@ textarea#comment_message.center-text{
 //  z-index:10;
 //}
 
+// Font Awesome ---------------------------------------------------------------------------------------
 
+.fa-picture-o  {
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  color: #F39A7E;
+  font-size: 50px;
+  margin: 0 20px;
+  
+  &:hover {
+    color: #FFF;
+  }
+}
+
+.fa-film  {
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  color: #F39A7E;
+  font-size: 50px;
+  margin: 0 20px;
+  
+  &:hover {
+    color: #FFF;
+  }
+}
+
+.fa-pencil-square-o   {
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  color: #F39A7E;
+  font-size: 50px;
+  margin: 0 20px;
+  
+  &:hover {
+    color: #FFF;
+  }
+}

@@ -39,6 +39,23 @@
   <% end %>
 </div>
 
+<% if current_photographer && @photographer.id == current_photographer.id %>
+  <div class="row padding-top">
+    <%= link_to new_gallery_path, class: "large-4 small-12 private-box center-text center-element" do %>
+      <i class="fa fa-film"></i><br /><br />
+      NEW GALLERY
+    <% end %>
+    <%= link_to new_photo_path, class: "large-4 small-12 private-box center-text center-element" do %>
+      <i class="fa fa-picture-o"></i><br /><br />
+      UPLOAD PHOTO
+    <% end %>
+    <%= link_to edit_photographer_path(@photographer), class: "large-4 small-12 private-box center-text center-element" do %>
+      <i class="fa fa-picture-o"></i><br /><br />
+      EDIT PROFILE
+    <% end %>
+  </div>
+<% end %>
+
 <div class="row padding-top">
   <div class="large-5 small-12 center-element center-text">
     <h3>Name:</h3>
@@ -101,14 +118,4 @@
         <% end %>
       <% end %>
     </div>
-</div>
-
-<div class="row">
-  <div class="small-12 center-text">
-    <% if current_photographer && @photographer.id == current_photographer.id %>
-      <%= link_to 'New Gallery', new_gallery_path %> |
-      <%= link_to 'Add Photos', new_photo_path %> |
-      <%= link_to 'Edit Profile', edit_photographer_path(@photographer) %> 
-    <% end %>
-  </div>
 </div>
