@@ -58,7 +58,7 @@
 
 <div class="row padding-top">
   <div class="large-5 small-12 center-element center-text">
-    <h3>Name:</h3>
+    <h3>NAME</h3>
   </div>
   <div class="large-5 small-12 center-element center-text">
     <p><%= @photographer.full_name %></p>
@@ -67,7 +67,7 @@
 </div>
 <div class="row padding-top">
   <div class="large-5 small-12 center-element center-text">
-      <h3>Email:</h3>
+      <h3>EMAIL</h3>
   </div>
   <div class="large-5 small-12 center-element center-text">
       <p><%= @photographer.email %></p>
@@ -75,7 +75,7 @@
 </div>
 <div class="row padding-top">
   <div class="large-5 small-12 center-element center-text">
-      <h3>Company name:</h3>
+      <h3>BUSINESS</h3>
   </div>
   <div class="large-5 small-12 center-element center-text">
       <p><%= @photographer.company_name %></p>
@@ -83,7 +83,7 @@
 </div>
 <div class="row padding-top">
   <div class="large-5 small-12 center-element center-text">
-    <h3>Website:</h3>
+    <h3>WEBSITE</h3>
   </div>
   <div class="large-5 small-12 center-element center-text">
       <p><%= @photographer.website %></p>
@@ -91,7 +91,7 @@
 </div>  
 <div class="row padding-top">
   <div class="large-5 small-12 center-element center-text">
-    <h3>Bio:</h3>
+    <h3>BIO</h3>
   </div>
   <div class="large-8 small-12 center-element center-text">    
     <p><%= @photographer.bio %></p>
@@ -99,17 +99,19 @@
 </div>
 <div class="row padding-top">
   <div class="large-5 small-12 center-element center-text">
-    <h3>Galleries:</h3>
+    <h3>GALLERIES</h3>
   </div>
 </div>
 <% if @galleries.size > 0 %>
-<% @galleries.each do |gallery| %>
+
 <div class="row padding-bottom">
   <div class="small-12 center-text">    
-      <ul>
-        <li><%= link_to gallery.title, gallery %></li>
+      <ul id="colored-galleries">
+        <% @galleries.each do |gallery| %>
+        <li class="large-5 small-12 center-element"><p><%= link_to gallery.title.upcase, gallery %></p></li>
+        <% end %>
       </ul>
-      <% end %>
+      
       <% else %>
         <% if current_photographer != nil && @photographer.id == current_photographer.id %>
           <%= link_to 'Create your first gallery!', new_gallery_path %> 

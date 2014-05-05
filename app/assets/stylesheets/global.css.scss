@@ -82,6 +82,24 @@ button {
   outline: none;
 }
 
+//li:nth-child(odd) { background: red; }
+
+#colored-comments div:nth-child(odd) {
+  background:#2F2F2F;
+}
+
+#colored-galleries li {
+  height:100px;
+}
+
+#colored-galleries li:nth-child(odd) {
+  background:#2F2F2F;
+}
+
+#colored-galleries p {
+  padding-top:40px;
+}
+
 // Padding ------------------------------------------------------------------------
 
 .content-padding{
@@ -201,6 +219,11 @@ input[type=button].submit-button {
 textarea#comment_message.center-text{
   width:100%;
   height:4em;
+}
+
+.inline-this{
+  display:block;
+  float:left;
 }
 
 // Logo Animation -------------------------------------------------------------------------------------
