@@ -51,12 +51,10 @@ body {
 
 .cbp-af-header nav {
 	float: right;
-  top:-60px;
 }
 
 /* header nav links! */
 .cbp-af-header nav a {
-	color: #B7B7B7;
 	font-weight: 700;
 	margin: 0 0 0 20px;
 	font-size: 1.4em;
