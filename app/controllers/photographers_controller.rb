@@ -29,7 +29,7 @@ class PhotographersController < ApplicationController
     @photographer = Photographer.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      # format.html # new.html.erb
       format.json { render json: @photographer }
     end
   end
@@ -42,7 +42,7 @@ class PhotographersController < ApplicationController
       if @photographer.save
         session[:photographer_id] = @photographer.id
         
-        format.html { redirect_to @photographer, notice: 'Photographer was successfully created.' }
+        format.html { redirect_to @photographer, notice: 'Photographer account was successfully created.' }
         format.json { render json: @photographer, status: :created, location: @photographer }
       else
         format.html { render action: "new" }
@@ -62,7 +62,7 @@ class PhotographersController < ApplicationController
 
     respond_to do |format|
       if @photographer.update_attributes(params[:photographer])
-        format.html { redirect_to @photographer, notice: 'Photographer was successfully updated.' }
+        format.html { redirect_to @photographer, notice: 'Photographer account was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

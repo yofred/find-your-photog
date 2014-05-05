@@ -10,5 +10,9 @@ $(document).ready(function(){
     $(this).hide();
     $('#user-form').slideDown('slow')
   });
+  
+  // $("#edit-photographer").on('click', function(){
+  //   $("#photographer-form").show();
+  // });
 });
 
