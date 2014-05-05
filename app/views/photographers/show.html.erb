@@ -108,7 +108,10 @@
   <div class="small-12 center-text">    
       <ul id="colored-galleries">
         <% @galleries.each do |gallery| %>
-        <li class="large-5 small-12 center-element"><p><%= link_to gallery.title.upcase, gallery %></p></li>
+        <li class="large-5 small-12 center-element">
+          <p><%= link_to gallery.title.upcase, gallery %></p><br />
+          created <%= format_date(gallery.created_at) %>
+        </li>  
         <% end %>
       </ul>
       

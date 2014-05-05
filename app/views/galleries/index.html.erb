@@ -1,14 +1,17 @@
-<h1>Listing galleries</h1>
+<!-- <div class="row center-text">
+  <h1>GALLERIES</h1>
+</div> -->
+<!-- link to create a new gallery -->
+<div class="row center-text padding-custom">
+  <%= link_to 'NEW GALLERY', new_gallery_path, :class => "link-button" %>
+</div>
 
 <!-- lists each gallery by title with link -->
-<% @galleries.each do |gallery| %>
-  <ul>
-    <li><%= link_to gallery.title, gallery %></li>
-  </ul>
-<% end %>
-</table>
-
-<br />
-
-<!-- link to create a new gallery -->
-<%= link_to 'New Gallery', new_gallery_path %>
+<ul id="colored-galleries">
+  <% @galleries.each do |gallery| %>
+    <li class="large-6 small-12 center-element center-text">
+      <p><%= link_to gallery.title.upcase, gallery %></p><br />
+      by <%= link_to gallery.photographer.full_name, photographer_path(gallery.photographer.id) %>
+    </li>
+  <% end %>
+</ul>
