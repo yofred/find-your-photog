@@ -10,6 +10,8 @@ class PagesController < ApplicationController
       format.html
       format.json { render json: @index }
     end
+
+    expires_in 3.minutes, :public => true
   end
   
 
