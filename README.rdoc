@@ -7,3 +7,5 @@ The site also harnesses 500px's API to display the 20 most popular images from t
 This site uses the Carrierwave and Fog gem to help upload the photo and create thumbnail versions of it.
 
 Images are stored and called from AWS.
+
+http://findyourphotog.herokuapp.com 
