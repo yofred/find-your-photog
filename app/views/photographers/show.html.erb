@@ -50,7 +50,7 @@
       UPLOAD PHOTO
     <% end %>
     <%= link_to edit_photographer_path(@photographer), class: "large-4 small-12 private-box center-text center-element", :id => "edit-photographer" do %>
-      <i class="fa fa-picture-o"></i><br /><br />
+      <i class="fa fa-pencil-square-o"></i><br /><br />
       EDIT PROFILE
     <% end %>
   </div>
@@ -114,13 +114,8 @@
         </li>  
         <% end %>
       </ul>
-      
       <% else %>
-        <% if current_photographer != nil && @photographer.id == current_photographer.id %>
-          <%= link_to 'Create your first gallery!', new_gallery_path %> 
-        <% else %>
           <%= @photographer.fname %> doesn't have any albums.
-        <% end %>
       <% end %>
     </div>
 </div>
