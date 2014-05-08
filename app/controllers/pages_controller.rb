@@ -11,7 +11,7 @@ class PagesController < ApplicationController
       format.json { render json: @index }
     end
 
-    expires_in 3.minutes, :public => true
+    # expires_in 3.minutes, :public => true
   end
   
 
